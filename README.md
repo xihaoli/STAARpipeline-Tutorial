@@ -1,5 +1,5 @@
 # STAARpipeline-Tutorial
-This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in STAARpipeline and STAARpipelineSummary packages.
+This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">STAARpipeline</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">STAARpipelineSummary</a> packages.
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
 #### Script: <a href="Association_Analysis_PreStep.r">**Association_Analysis_PreStep.r**</a>
