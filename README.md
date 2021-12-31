@@ -1,5 +1,32 @@
 # STAARpipeline-Tutorial
 This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">STAARpipeline</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">STAARpipelineSummary</a> packages.
+## Pre-step of association analysis using STAARpipeline 
+### Generate annotated GDS (aGDS) file using FAVORannotator
+#### Prerequisites.
+FAVORannotator (csv) depends on the xsv software and the FAVOR database in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv** software</a> and 
+download the <a href="http://favor.genohub.org/">**FAVOR** database (csv)</a> before using the FAVORannotator (csv). 
+#### Step 1: Generate the variants list to be annotated. 
+##### Script: <a href="FAVORannotator_csv/Varinfo_gds.R">**Varinfo_gds.R**</a>
+##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
+##### Output: CSV files of the variants list. For each chromosome, the number of CSV files is listed in <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>.
+
+#### Step 2: Annotate the variants using the FAVOR database through xsv software.
+##### Script: <a href="FAVORannotator_csv/Annotate.R">**Annotate.R**</a> 
+##### Input: CSV files of the variants list to be annotated, the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>,
+the FAVOR database, and the directory xsv software. For more details, please see the R script.
+##### Output: CSV files of the annotated variants list. 
+* `Anno_chrXX.csv`: a csv file containing annotated variants list of chromosome XX. <br>
+* `Anno_chrXX_STAARpipeline.csv`: a csv file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
+The annotations in this file is a subset of `Anno_chrXX.csv`.<br>
+
+#### Step 3: Generate the annotated GDS file.
+##### Script: <a href="FAVORannotator_csv/gds2agds.R">**gds2agds.R**</a> 
+##### Input: GDS files and the csv files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
+##### Output: aGDS files including both the genotype and annotation information. 
+
+**Note**: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed
+usage of FAVORannotator in SQL version. 
+
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
 #### Script: <a href="Association_Analysis_PreStep.r">**Association_Analysis_PreStep.r**</a>
@@ -128,3 +155,4 @@ Functionally annotate rare variants of each of the input genetic regions.
 #### Output: For each input genetic region, the script outputs a Rdata file containing the rare variants and the corresponding functional annotations.
 
 ### An example of batch job submission scripts for these analyses can be found <a href="/batch jobs">**here**</a>.
+
