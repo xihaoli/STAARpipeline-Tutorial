@@ -1,6 +1,10 @@
 # STAARpipeline-Tutorial
 This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">STAARpipeline</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">STAARpipelineSummary</a> packages.
 ## Pre-step of association analysis using STAARpipeline 
+### Generate Genomic Data Structure (GDS) file
+R package <a href="https://github.com/zhengxwen/SeqArray/">**SeqArray**</a> provides functions to convert the genotype data to GDS format. 
+For more details, please see the R package <a href="https://github.com/zhengxwen/SeqArray/">**SeqArray**</a>.
+
 ### Generate annotated GDS (aGDS) file using FAVORannotator
 #### Prerequisites.
 FAVORannotator (csv) depends on the xsv software and the FAVOR database in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv** software</a> and 
