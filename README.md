@@ -2,13 +2,13 @@
 This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">STAARpipeline</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">STAARpipelineSummary</a> packages.
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
-R package <a href="https://github.com/zhengxwen/SeqArray/">**SeqArray**</a> provides functions to convert the genotype data to GDS format. 
-For more details, please see the R package <a href="https://github.com/zhengxwen/SeqArray/">**SeqArray**</a>.
+R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a> provides functions to convert the genotype data to GDS format. 
+For more details, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a>.
 
 ### Generate annotated GDS (aGDS) file using FAVORannotator
 #### Prerequisites.
-FAVORannotator (csv) depends on the xsv software and the FAVOR database in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv** software</a> and 
-download the <a href="http://favor.genohub.org/">**FAVOR** database (csv)</a> before using the FAVORannotator (csv). 
+FAVORannotator (CSV version) depends on the xsv software and the **FAVOR** database in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv** software</a> and 
+download the <a href="http://favor.genohub.org">**FAVOR** database CSV files</a> (under the "FAVORannotator" tab) before using the FAVORannotator (CSV version). 
 #### Step 1: Generate the variants list to be annotated. 
 ##### Script: <a href="FAVORannotator_csv/Varinfo_gds.R">**Varinfo_gds.R**</a>
 ##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
