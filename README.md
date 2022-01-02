@@ -1,5 +1,5 @@
 # STAARpipeline-Tutorial
-This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">STAARpipeline</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">STAARpipelineSummary</a> packages.
+This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
 R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a> provides functions to convert the genotype data to GDS format. 
