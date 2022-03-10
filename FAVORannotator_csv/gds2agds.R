@@ -50,3 +50,4 @@ Anno.folder <- addfolder.gdsn(index.gdsn(genofile, "annotation/info"), "Function
 add.gdsn(Anno.folder, "FunctionalAnnotation", val=FunctionalAnnotation, compress="LZMA_ra", closezip=TRUE)
 
 seqClose(genofile)
+
