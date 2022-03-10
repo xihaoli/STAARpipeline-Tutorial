@@ -17,12 +17,12 @@ library(STAARpipeline)
 ###########################################################
 #           User Input
 ###########################################################
-## job nums
-jobs_num <- get(load("/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/jobs_num.Rdata"))
-## agds dir
-agds_dir <- get(load("/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/agds_dir.Rdata"))
-## Null Model
-obj_nullmodel <- get(load("/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/obj.GENESIS.STAAR.LDL.fulladj.group.size.30.20210915.Rdata"))
+## Number of jobs for each chromosome
+jobs_num <- get(load("/path_to_the_file/jobs_num.Rdata"))
+## aGDS directory
+agds_dir <- get(load("/path_to_the_file/agds_dir.Rdata"))
+## Null model
+obj_nullmodel <- get(load("/path_to_the_file/obj_nullmodel.Rdata"))
 
 ## QC_label
 QC_label <- "annotation/filter"
@@ -32,21 +32,23 @@ variant_type <- "SNV"
 geno_missing_imputation <- "mean"
 
 ## Annotation_dir
-Annotation_dir <- "annotation/info/TOPMedAnnotation"
+Annotation_dir <- "annotation/info/FunctionalAnnotation"
 ## Annotation channel
-Annotation_name_catalog <- get(load("/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/Annotation_name_catalog.Rdata"))
+Annotation_name_catalog <- get(load("/path_to_the_file/Annotation_name_catalog.Rdata"))
+# Or equivalently
+# Annotation_name_catalog <- read.csv("/path_to_the_file/Annotation_name_catalog.csv")
 ## Use_annotation_weights
 Use_annotation_weights <- TRUE
 ## Annotation name
 Annotation_name <- c("CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.EpigeneticRepressed","aPC.EpigeneticTranscription",
-					"aPC.Conservation","aPC.LocalDiversity","aPC.Mappability","aPC.TF","aPC.Protein","aPC.Liver")
+                     "aPC.Conservation","aPC.LocalDiversity","aPC.Mappability","aPC.TF","aPC.Protein")
 
 ## output path
-output_path <- "/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/Gene_Centric_Coding/Results/"
+output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_Coding"
 
-## input array id from batch file (Harvard FAS cluster)
+## input array id from batch file
 arrayid_longmask <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################
@@ -83,9 +85,9 @@ for(kk in sub_seq_id)
 
 	results <- Gene_Centric_Coding(chr=chr,gene_name=gene_name,genofile=genofile,obj_nullmodel=obj_nullmodel,
                                 rare_maf_cutoff=0.01,rv_num_cutoff=2,
-								QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
-								Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
-								Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
+                                QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
+                                Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
+                                Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
 	
 	results_coding <- append(results_coding,results)
 
@@ -93,5 +95,4 @@ for(kk in sub_seq_id)
 }
 
 save(results_coding,file=paste0(output_path,output_file_name,"_",arrayid_longmask+379,".Rdata"))
-
 
