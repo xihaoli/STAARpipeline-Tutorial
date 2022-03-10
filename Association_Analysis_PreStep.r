@@ -39,7 +39,7 @@ dir <- c("/rsid","/genecode_comprehensive_category","/genecode_comprehensive_inf
 #           Main Function 
 ###########################################################
 
-#### aGDS directory (alternatively, can skip this part by providing agds_dir.csv with the same information)
+#### aGDS directory
 agds_dir <- paste0(dir.geno,adgs_file_name_1,seq(1,22),agds_file_name_2) 
 save(agds_dir,file=paste0(output_path,"agds_dir.Rdata",sep=""))
 
