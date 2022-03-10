@@ -96,8 +96,8 @@ The number of output files is the summation of the column "scang_num" for the ob
 ### Step 0: Select independent variants from a known variants list to be used in conditional analysis
 #### Script: <a href="STAARpipelineSummary_Known_Locis_Pruning.r">**STAARpipelineSummary_Known_Locis_Pruning.r**</a> 
 Perform stepwise selection to select the subset of independent variants from a known variants list to be used in the conditional analysis. 
-#### Input: aGDS files, a list of known variants (Chr, Pos, REF and ALT) and STAAR null model.
-<a href="STAARpipelineSummary_Known_Locis_Info.r">**STAARpipelineSummary_Known_Locis_Info.r**</a> could get the information of Chr, Pos, REF and ALT from #rs. For details, see the R scripts.
+#### Input: aGDS files, a list of known variants (CHR, POS, REF and ALT) and STAAR null model.
+<a href="STAARpipelineSummary_Known_Locis_Info.r">**STAARpipelineSummary_Known_Locis_Info.r**</a> could get the information of CHR, POS, REF and ALT from #rs. For details, see the R scripts.
 #### Output: a Rdata file containing a list of independent variants to be used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Locis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide. <br>
 
