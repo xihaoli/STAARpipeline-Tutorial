@@ -2,13 +2,13 @@
 This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing (WGS/WES) studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
-R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a> provides functions to convert the genotype data to GDS format. 
+R/Bioconductor package **SeqArray** provides functions to convert the genotype data to GDS format. 
 For more details, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a>.
 
 ### Generate annotated GDS (aGDS) file using FAVORannotator
-#### Prerequisites.
-FAVORannotator (CSV version) depends on the xsv software and the **FAVOR** database in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv** software</a> and 
-download the <a href="http://favor.genohub.org">**FAVOR** database CSV files</a> (under the "FAVORannotator" tab) before using the FAVORannotator (CSV version). 
+#### Prerequisites:
+**FAVORannotator** (CSV version) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and 
+download the <a href="http://favor.genohub.org">**FAVOR database** CSV files</a> (under the "FAVORannotator" tab) before using **FAVORannotator** (CSV version).
 #### Step 1: Generate the variants list to be annotated. 
 ##### Script: <a href="FAVORannotator_csv/Varinfo_gds.R">**Varinfo_gds.R**</a>
 ##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
@@ -23,13 +23,13 @@ the FAVOR database, and the directory xsv software. For more details, please see
 * `Anno_chrXX_STAARpipeline.csv`: a csv file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
 The annotations in this file is a subset of `Anno_chrXX.csv`.<br>
 
-#### Step 3: Generate the annotated GDS file.
+#### Step 3: Generate the annotated GDS (aGDS) file.
 ##### Script: <a href="FAVORannotator_csv/gds2agds.R">**gds2agds.R**</a> 
 ##### Input: GDS files and the csv files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
 ##### Output: aGDS files including both the genotype and annotation information. 
 
-**Note**: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed
-usage of FAVORannotator in SQL version. 
+Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed
+usage of **FAVORannotator** (SQL version).
 
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
@@ -98,7 +98,7 @@ The number of output files is the summation of the column "scang_num" for the ob
 Perform stepwise selection to select the subset of independent variants from a known variants list to be used in the conditional analysis. 
 #### Input: aGDS files, a list of known variants (Chr, Pos, REF and ALT) and STAAR null model.
 <a href="STAARpipelineSummary_Known_Locis_Info.r">**STAARpipelineSummary_Known_Locis_Info.r**</a> could get the information of Chr, Pos, REF and ALT from #rs. For details, see the R scripts.
-#### Output: a Rdata file contains a list of independent variants that used in conditional analysis.
+#### Output: a Rdata file containing a list of independent variants used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Locis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide. <br>
 
 **Note**: <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which might be used for variant-set conditional analysis.  
@@ -138,7 +138,7 @@ Summarize dynamic window analysis results and perform conditional analysis of un
 Functionally annotate a list of variants.
 #### Input: aGDS files and a list of variants.
 The list of variants could be the individual analysis results generated by STAARpipelineSummary.
-#### Output: a Rdata file contains the input variants together with the corresponding functional annotations.
+#### Output: a Rdata file containing the input variants together with the corresponding functional annotations.
 
 ### Step 5.2: Functionally annotate rare variants in coding masks
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Coding_Annotation.r">**STAARpipelineSummary_Gene_Centric_Coding_Annotation.r**</a> 
