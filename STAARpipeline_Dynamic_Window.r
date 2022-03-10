@@ -24,7 +24,7 @@ jobs_num <- get(load("/path_to_the_file/jobs_num.Rdata"))
 ## aGDS directory
 agds_dir <- get(load("/path_to_the_file/agds_dir.Rdata"))
 ## Null model
-obj_nullmodel <- get(load("/path_to_the_file/obj_nullmodel.Rdata"))
+obj_nullmodel_SCANG_STAAR <- get(load("/path_to_the_file/obj_nullmodel_SCANG_STAAR.Rdata"))
 
 ## QC_label
 QC_label <- "annotation/filter"
@@ -74,7 +74,7 @@ genofile <- seqOpen(gds.path)
 start_loc <- (groupid-1)*1.5e6 + jobs_num$start_loc[chr]
 end_loc <- min(start_loc + 1.5e6 - 1, jobs_num$end_loc[chr])
 
-results_scang <- Dynamic_Window_SCANG(chr=chr,start_loc=start_loc,end_loc=end_loc,genofile=genofile,obj_nullmodel=obj_nullmodel,
+results_scang <- Dynamic_Window_SCANG(chr=chr,start_loc=start_loc,end_loc=end_loc,genofile=genofile,obj_nullmodel=obj_nullmodel_SCANG_STAAR,
                                       QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
                                       Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                                       Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
