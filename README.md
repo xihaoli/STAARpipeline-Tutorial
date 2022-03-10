@@ -21,7 +21,7 @@ the FAVOR database, and the directory xsv software. For more details, please see
 ##### Output: CSV files of the annotated variants list. 
 * `Anno_chrXX.csv`: a csv file containing annotated variants list of chromosome XX. <br>
 * `Anno_chrXX_STAARpipeline.csv`: a csv file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
-The annotations in this file is a subset of `Anno_chrXX.csv`.<br>
+The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 
 #### Step 3: Generate the annotated GDS (aGDS) file.
 ##### Script: <a href="FAVORannotator_csv/gds2agds.R">**gds2agds.R**</a> 
@@ -36,8 +36,8 @@ usage of **FAVORannotator** (SQL version).
 #### Script: <a href="Association_Analysis_PreStep.r">**Association_Analysis_PreStep.r**</a>
 #### Input: aGDS files of all 22 chromosomes. For more details, please see the R script.
 #### Output: `agds_dir.Rdata`, `Annotation_name_catalog.Rdata`, `jobs_num.Rdata`.
-* `agds_dir.Rdata`: a vector containing directory of GDS/aGDS files of all chromosomes. <br>
-* `Annotation_name_catalog.Rdata`: a data frame containing the annotation name and the corresponding channel name in the aGDS file. <br>
+* `agds_dir.Rdata`: a vector containing directory of GDS/aGDS files of all chromosomes. Alternatively, one can skip this part in the R script by providing `agds_dir.csv` with the same information. <br>
+* `Annotation_name_catalog.Rdata`: a data frame containing the annotation name and the corresponding channel name in the aGDS file. Alternatively, one can skip this part in the R script by providing `Annotation_name_catalog.csv` with the same information. <br>
 * `jobs_num.Rdata`: a data frame containing the number of jobs for association analysis, including individual analysis, sliding window analysis and dynamic window analysis. 
 
 ### Step 1: Fit STAAR null model
