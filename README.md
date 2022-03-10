@@ -101,7 +101,7 @@ Perform stepwise selection to select the subset of independent variants from a k
 #### Output: a Rdata file containing a list of independent variants to be used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Loci_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide. <br>
 
-**Note**: <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which can be used for variant-set conditional analysis.  
+Note: <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which can be used for variant-set conditional analysis.  
 
 ### Step 1: Summarize individual analysis results
 #### Script: <a href="STAARpipelineSummary_Individual_Analysis.r">**STAARpipelineSummary_Individual_Analysis.r**</a> 
