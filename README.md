@@ -93,15 +93,15 @@ Perform dynamic window analysis using the STAARpipeline package.
 The number of output files is the summation of the column "scang_num" for the object in `jobs_num.Rdata`. 
 
 ## Summarization and visualization of association analysis results using STAARpipelineSummary
-### Step 0: Select independent variants from a known variants list that used in conditional analysis
+### Step 0: Select independent variants from a known variants list to be used in conditional analysis
 #### Script: <a href="STAARpipelineSummary_Known_Locis_Pruning.r">**STAARpipelineSummary_Known_Locis_Pruning.r**</a> 
 Perform stepwise selection to select the subset of independent variants from a known variants list to be used in the conditional analysis. 
 #### Input: aGDS files, a list of known variants (Chr, Pos, REF and ALT) and STAAR null model.
 <a href="STAARpipelineSummary_Known_Locis_Info.r">**STAARpipelineSummary_Known_Locis_Info.r**</a> could get the information of Chr, Pos, REF and ALT from #rs. For details, see the R scripts.
-#### Output: a Rdata file containing a list of independent variants used in conditional analysis.
+#### Output: a Rdata file containing a list of independent variants to be used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Locis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide. <br>
 
-**Note**: <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which might be used for variant-set conditional analysis.  
+**Note**: <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Locis_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which can be used for variant-set conditional analysis.  
 
 ### Step 1: Summarize individual analysis results
 #### Script: <a href="STAARpipelineSummary_Individual_Analysis.r">**STAARpipelineSummary_Individual_Analysis.r**</a> 
