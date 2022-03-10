@@ -21,7 +21,7 @@ library(STAARpipeline)
 ## aGDS directory
 agds_dir <- get(load("/path_to_the_file/agds_dir.Rdata"))
 ## Info of known variants
-known_loci_info <- read.csv("/path_to_the_file/TOPMed_F5_LDL_Known_Loci_info.Rdata")
+known_loci_info <- read.csv("/path_to_the_file/TOPMed_F5_LDL_Known_Loci_info.csv")
 ## Null model
 obj_nullmodel <- get(load("/path_to_the_file/obj_nullmodel.Rdata"))
 

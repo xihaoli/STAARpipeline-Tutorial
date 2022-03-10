@@ -1,8 +1,9 @@
-##########################################################
+###########################################################
 # Combine chromosome-wide results into genome-wide   
 # Xihao Li, Zilin Li
-# 11/04/2021
-##########################################################
+# Initiate date: 11/04/2021
+# Current date: 03/10/2022
+###########################################################
 
 rm(list=ls())
 gc()
@@ -10,9 +11,8 @@ gc()
 ###########################################################
 #           User Input
 ###########################################################
-
 ## output path
-output_path <- "/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/Known_Loci/"
+output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_known_loci_individual_analysis_genome_LD_pruning"
 
