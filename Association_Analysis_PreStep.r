@@ -17,23 +17,23 @@ library(SeqVarTools)
 ###########################################################
 
 ## file directory of aGDS file (genotype and annotation data) 
-dir.geno <- "/n/holystore01/LABS/xlin/Lab/xihaoli/TOPMed_Freeze_5/TOPMed.Anno-All-In-One-GDS-v1.1.2/"
+dir.geno <- "/path_to_the_aGDS_file/"
 ## file name of aGDS, seperate by chr number 
 adgs_file_name_1 <- "freeze.5.chr"
 agds_file_name_2 <- ".pass_and_fail.gtonly.minDP0.gds"
 ## channel name of the QC label in the GDS/aGDS file
 QC_label <- "annotation/filter"
 ## file directory for the output files
-output_path <- "/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_LDL/" 
+output_path <- "/path_to_the_output_file/" 
 ## annotation name. The first eight names are used to define masks in gene-centric analysis, do not change them!! 
 ## The others are the annotation you want to use in the STAAR procedure, and they are flexible to change.
 name <- c("rs_num","GENCODE.Category","GENCODE.Info","GENCODE.EXONIC.Category","MetaSVM","GeneHancer","CAGE","DHS","CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.EpigeneticRepressed","aPC.EpigeneticTranscription",
-					"aPC.Conservation","aPC.LocalDiversity","aPC.Mappability","aPC.TF","aPC.Protein","aPC.Liver")
+		  "aPC.Conservation","aPC.LocalDiversity","aPC.Mappability","aPC.TF","aPC.Protein")
 ## channel name of the annotations. Make sure they are matched with the name, especially for the first eight one!! 
 dir <- c("/dbSNP_rs_num","/GENCODE.Category","/GENCODE.Info","/GENCODE.EXONIC.Category","/dbNSFP/MetaSVM_pred","/GeneHancer","/CAGE.tc","/rOCRs","/CADD.FULL/PHRED","/LINSIGHT.PHRED.rounded","/FATHMM.XF.PHRED.rounded",
-					"/APC.PHRED.rounded/aPC.EpigeneticActive","/APC.PHRED.rounded/aPC.EpigeneticRepressed","/APC.PHRED.rounded/aPC.EpigeneticTranscription",
-					"/APC.PHRED.rounded/aPC.Conservation.v2","/APC.PHRED.rounded/aPC.LocalDiversity.v2","/APC.PHRED.rounded/aPC.Mappability",
-					"/APC.PHRED.rounded/aPC.TF","/APC.PHRED.rounded/aPC.Protein","/APC.PHRED.rounded/aPC.Liver")
+		 "/APC.PHRED.rounded/aPC.EpigeneticActive","/APC.PHRED.rounded/aPC.EpigeneticRepressed","/APC.PHRED.rounded/aPC.EpigeneticTranscription",
+		 "/APC.PHRED.rounded/aPC.Conservation.v2","/APC.PHRED.rounded/aPC.LocalDiversity.v2","/APC.PHRED.rounded/aPC.Mappability",
+		 "/APC.PHRED.rounded/aPC.TF","/APC.PHRED.rounded/aPC.Protein")
 
 ###########################################################
 #           Main Function 
@@ -79,6 +79,4 @@ colnames(jobs_num) <- c("chr","start_loc","end_loc","individual_analysis_num","s
 jobs_num <- as.data.frame(jobs_num)
 
 save(jobs_num,file=paste0(output_path,"jobs_num.Rdata",sep=""))
-
-
 
