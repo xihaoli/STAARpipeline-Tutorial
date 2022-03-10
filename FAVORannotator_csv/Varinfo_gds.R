@@ -6,13 +6,13 @@ gc()
 ##########################################################################
 
 ### DB split information 
-file_DBsplit <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/FAVORdatabase_chrsplit.csv"
+file_DBsplit <- "/path_to_the_file/FAVORdatabase_chrsplit.csv"
 ### Targeted GDS
-dir_geno <- "/n/holystore01/LABS/xlin/Lab/xihao_zilin/TOPMed_F9/GDS/"
-gds_file_name_1 <- "freeze.9b.chr"
+dir_geno <- "/path_to_the_GDS_file/"
+gds_file_name_1 <- "freeze.5.chr"
 gds_file_name_2 <- ".pass_and_fail.gtonly.minDP0.gds"
 ### output
-output_path <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/"
+output_path <- "/path_to_the_output_file/"
 
 chr <- as.numeric(commandArgs(TRUE)[1])
 

@@ -6,19 +6,19 @@ gc()
 ##########################################################################
 
 ### DB split information 
-file_DBsplit <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/FAVORdatabase_chrsplit.csv"
+file_DBsplit <- "/path_to_the_file/FAVORdatabase_chrsplit.csv"
 
 ### xsv directory
-xsv <- "/n/home05/zilinli/.cargo/bin/xsv"
+xsv <- "/path_to_the_xsv_software/bin/xsv"
 
 ### output (Step 2 and Step 3)
-output_path <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/"
+output_path <- "/path_to_the_output_file/"
 
 ### DB file
-DB_path <- "/n/holyscratch01/xlin/xihao_zilin/FAVORAnnotatorDB/"
+DB_path <- "/path_to_the_FAVOR_database/"
 
 ### anno channel (subset)
-anno_colnum <- c(1,8,9:12,14,16,19,23,25:36)
+anno_colnum <- c(1,8:12,14,16,19,23,25:36)
 
 chr <- as.numeric(commandArgs(TRUE)[1])
 
@@ -60,7 +60,4 @@ for(kk in 1:(length(anno_colnum)-1))
 anno_colnum_xsv <- paste0(anno_colnum_xsv,anno_colnum[length(anno_colnum)])
 
 system(paste0(xsv," select ",anno_colnum_xsv," ",output_path,"chr",chr,"/Anno_chr",chr,".csv > ",output_path,"chr",chr,"/Anno_chr",chr,"_STAARpipeline.csv"))
-
-
-
 

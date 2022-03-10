@@ -6,11 +6,11 @@ gc()
 ##########################################################################
 
 ### gds file
-dir_geno <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/"
-gds_file_name_1 <- "freeze.9b.chr"
+dir_geno <- "/path_to_the_GDS_file/"
+gds_file_name_1 <- "freeze.5.chr"
 gds_file_name_2 <- ".pass_and_fail.gtonly.minDP0.gds"
-### annotation file
-dir_anno <- "/n/holyscratch01/xlin/xihao_zilin/TOPMed_F9/"
+### annotation file (output of Annotate.R)
+dir_anno <- "/path_to_the_annotation_file/"
 anno_file_name_1 <- "Anno_chr"
 anno_file_name_2 <- "_STAARpipeline.csv"
 
@@ -40,6 +40,7 @@ dim(FunctionalAnnotation)
 ## rename colnames
 colnames(FunctionalAnnotation)[2] <- "apc_conservation"
 colnames(FunctionalAnnotation)[7] <- "apc_local_nucleotide_diversity"
+colnames(FunctionalAnnotation)[9] <- "apc_protein_function"
 
 ## open GDS
 gds.path <- paste0(dir_geno,gds_file_name_1,chr,gds_file_name_2)
