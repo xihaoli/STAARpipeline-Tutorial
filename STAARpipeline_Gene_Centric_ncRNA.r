@@ -2,13 +2,14 @@
 # Gene-centric analysis for noncoding rare variants of ncRNA
 # genes using STAARpipeline
 # Xihao Li, Zilin Li
-# 11/04/2021
+# Initiate date: 11/04/2021
+# Current date: 03/10/2022
 #####################################################################
 
 rm(list=ls())
 gc()
 
-### load required package
+## load required packages
 library(gdsfmt)
 library(SeqArray)
 library(SeqVarTools)
@@ -110,7 +111,6 @@ if(arrayid==219)
 	sub_seq_id <- setdiff(sub_seq_id,103)
 }
 
-
 ### gds file
 gds.path <- agds_dir[chr]
 genofile <- seqOpen(gds.path)
@@ -123,7 +123,7 @@ for(kk in sub_seq_id)
 	print(kk)
 	gene_name <- ncRNA_gene_chr[kk,2]
 	results <- c()
-	results <- try(ncRNA(chr=chr, gene_name=gene_name, genofile=genofile, obj_nullmodel=obj_nullmodel,
+	results <- try(ncRNA(chr=chr,gene_name=gene_name,genofile=genofile,obj_nullmodel=obj_nullmodel,
 	                     rare_maf_cutoff=0.01,rv_num_cutoff=2,
 	                     QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
 	                     Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,

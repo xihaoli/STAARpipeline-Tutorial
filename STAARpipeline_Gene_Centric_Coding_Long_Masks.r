@@ -1,13 +1,14 @@
 ##################################################################################
 # Gene-centric analysis for coding rare variants in long masks using STAARpipeline
 # Xihao Li, Zilin Li
-# 11/04/2021
+# Initiate date: 11/04/2021
+# Current date: 03/10/2022
 ##################################################################################
 
 rm(list=ls())
 gc()
 
-## load required package
+## load required packages
 library(gdsfmt)
 library(SeqArray)
 library(SeqVarTools)
@@ -47,7 +48,6 @@ Annotation_name <- c("CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.E
 output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_Coding"
-
 ## input array id from batch file
 arrayid_longmask <- as.numeric(commandArgs(TRUE)[1])
 

@@ -1,13 +1,14 @@
 #####################################################################
 # Gene-centric analysis for coding rare variants using STAARpipeline
 # Xihao Li, Zilin Li
-# 11/04/2021
+# Initiate date: 11/04/2021
+# Current date: 03/10/2022
 #####################################################################
 
 rm(list=ls())
 gc()
 
-## load required package
+## load required packages
 library(gdsfmt)
 library(SeqArray)
 library(SeqVarTools)
@@ -93,7 +94,6 @@ if(arrayid==113)
 {
 	sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580))
 }
-
 
 ### gds file
 gds.path <- agds_dir[chr]
