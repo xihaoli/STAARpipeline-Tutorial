@@ -1,19 +1,18 @@
-##########################################################
+###########################################################
 # Independent variants selection from a list of variants
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
 # Current date: 03/10/2022
-##########################################################
+###########################################################
+rm(list=ls())
+gc()
 
-## load required package
+## load required packages
 library(gdsfmt)
 library(SeqArray)
 library(SeqVarTools)
 library(STAAR)
 library(STAARpipeline)
-
-rm(list=ls())
-gc()
 
 ###########################################################
 #           User Input
