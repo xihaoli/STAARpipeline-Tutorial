@@ -5,7 +5,6 @@
 # Initiate date: 11/04/2021
 # Current date: 03/10/2022
 #####################################################################
-
 rm(list=ls())
 gc()
 
@@ -19,8 +18,6 @@ library(STAARpipeline)
 ###########################################################
 #           User Input
 ###########################################################
-## Number of jobs for each chromosome
-jobs_num <- get(load("/path_to_the_file/jobs_num.Rdata"))
 ## aGDS directory
 agds_dir <- get(load("/path_to_the_file/agds_dir.Rdata"))
 ## Null model
