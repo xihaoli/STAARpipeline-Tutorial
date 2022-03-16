@@ -44,8 +44,6 @@ Annotation_dir <- "annotation/info/FunctionalAnnotation"
 Annotation_name_catalog <- get(load("/path_to_the_file/Annotation_name_catalog.Rdata"))
 # Or equivalently
 # Annotation_name_catalog <- read.csv("/path_to_the_file/Annotation_name_catalog.csv")
-## Use_annotation_weights
-Use_annotation_weights <- TRUE
 ## Annotation name
 Annotation_name <- c("rs_num","GENCODE.Category","GENCODE.Info","GENCODE.EXONIC.Category","MetaSVM","GeneHancer","CAGE","DHS",
                      "CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.EpigeneticRepressed","aPC.EpigeneticTranscription",
@@ -74,8 +72,8 @@ for(kk in 1:length(chr_seq))
 	genofile <- seqOpen(gds.path)
 
 	results_info <- Gene_Centric_Coding_Info(category=category,chr=chr,genofile=genofile,obj_nullmodel=obj_nullmodel,gene_name=gene_name,known_loci=known_loci,
-	QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
-	Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,Annotation_name=Annotation_name)
+	                                         QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
+	                                         Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,Annotation_name=Annotation_name)
 
 	seqClose(genofile)
 
