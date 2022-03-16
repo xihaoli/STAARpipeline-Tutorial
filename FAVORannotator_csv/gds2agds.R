@@ -46,7 +46,7 @@ colnames(FunctionalAnnotation)[9] <- "apc_protein_function"
 gds.path <- paste0(dir_geno,gds_file_name_1,chr,gds_file_name_2)
 genofile <- seqOpen(gds.path, readonly = FALSE)
 
-Anno.folder <- addfolder.gdsn(index.gdsn(genofile, "annotation/info"), "FunctionalAnnotation")
+Anno.folder <- index.gdsn(genofile, "annotation/info")
 add.gdsn(Anno.folder, "FunctionalAnnotation", val=FunctionalAnnotation, compress="LZMA_ra", closezip=TRUE)
 
 seqClose(genofile)
