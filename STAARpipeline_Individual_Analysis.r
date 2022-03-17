@@ -35,7 +35,7 @@ geno_missing_imputation <- "mean"
 output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_results_individual_analysis"
-## input array id from batch file (Harvard FAS cluster)
+## input array id from batch file (Harvard FAS RC cluster)
 arrayid <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################

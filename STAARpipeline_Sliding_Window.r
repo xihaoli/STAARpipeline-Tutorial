@@ -47,8 +47,7 @@ Annotation_name <- c("CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.E
 output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_Sliding_Window"
-
-## input array id from batch file
+## input array id from batch file (Harvard FAS RC cluster)
 arrayid <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################
