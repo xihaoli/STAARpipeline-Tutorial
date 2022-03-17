@@ -41,7 +41,6 @@ arrayid <- as.numeric(commandArgs(TRUE)[1])
 ###########################################################
 #           Main Function 
 ###########################################################
-
 chr <- which.max(arrayid <= cumsum(jobs_num$individual_analysis_num))
 group.num <- jobs_num$individual_analysis_num[chr]
 
