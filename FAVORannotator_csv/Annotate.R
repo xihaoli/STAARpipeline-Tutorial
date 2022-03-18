@@ -18,7 +18,7 @@ output_path <- "/path_to_the_output_file/"
 DB_path <- "/path_to_the_FAVOR_database/"
 
 ### anno channel (subset)
-anno_colnum <- c(1,8:12,14,16,19,23,25:36)
+anno_colnum <- c(1,8:12,15,16,19,23,25:36)
 
 chr <- as.numeric(commandArgs(TRUE)[1])
 
