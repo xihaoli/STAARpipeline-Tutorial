@@ -9,13 +9,13 @@ gc()
 file_DBsplit <- "/path_to_the_file/FAVORdatabase_chrsplit.csv"
 
 ### xsv directory
-xsv <- "/path_to_the_xsv_software/bin/xsv"
+xsv <- "/path_to_the_xsv_software/.cargo/bin/xsv"
 
-### output (Step 2 and Step 3)
+### output
 output_path <- "/path_to_the_output_file/"
 
 ### DB file
-DB_path <- "/path_to_the_FAVOR_database/"
+DB_path <- "/path_to_the_FAVOR_database/n/holystore01/LABS/xlin/Lab/xihao_zilin/FAVORDB/"
 
 ### anno channel (subset)
 anno_colnum <- c(1,8:12,15,16,19,23,25:36)
