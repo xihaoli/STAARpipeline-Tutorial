@@ -9,7 +9,16 @@ For more details, please see the R/Bioconductor package <a href="https://biocond
 #### Prerequisites:
 **FAVORannotator** (CSV version) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and 
 download the <a href="http://favor.genohub.org">**FAVOR database** CSV files</a> (under the "FAVORannotator" tab) before using **FAVORannotator** (CSV version).
-#### Step 1: Generate the variants list to be annotated. 
+#### Step 0: Install xsv.
+The following steps are for the widely used operating system (ubuntu) on a virtual machine.
+
+1. Install Rust and Cargo:
+ - ```$ curl https://sh.rustup.rs -sSf | sh```
+2. Source the environment: 
+ - ```$ source $HOME/.cargo/env``` 
+3. Install xsv using Cargo:
+ - ```$ cargo install xsv```
+#### Step 1: Generate the variants list to be annotated.
 ##### Script: <a href="FAVORannotator_csv/Varinfo_gds.R">**Varinfo_gds.R**</a>
 ##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
 ##### Output: CSV files of the variants list. For each chromosome, the number of CSV files is listed in <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>.
