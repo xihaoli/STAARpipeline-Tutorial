@@ -10,7 +10,7 @@ For more details, please see the R/Bioconductor package <a href="https://biocond
 **FAVORannotator** (CSV version) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and 
 download the <a href="http://favor.genohub.org">**FAVOR database** CSV files</a> (under the "FAVORannotator" tab) before using **FAVORannotator** (CSV version).
 #### Step 0: Install xsv.
-The following steps are for the widely used operating system (ubuntu) on a virtual machine.
+The following steps are for the widely used operating system (Ubuntu) on a virtual machine.
 
 1. Install Rust and Cargo:
  - ```$ curl https://sh.rustup.rs -sSf | sh```
