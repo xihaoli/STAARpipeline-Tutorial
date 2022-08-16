@@ -23,6 +23,8 @@ The following steps are for the widely used operating system (Ubuntu) on a virtu
 ##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
 ##### Output: CSV files of the variants list. For each chromosome, the number of CSV files is listed in <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>.
 
+Note: The physical positions of variants in the GDS file (of each chromosome) should be sorted in ascending order.
+
 #### Step 2: Annotate the variants using the FAVOR database through xsv software.
 ##### Script: <a href="FAVORannotator_csv/Annotate.R">**Annotate.R**</a> 
 ##### Input: CSV files of the variants list to be annotated, the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>,
@@ -37,8 +39,7 @@ The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 ##### Input: GDS files and the csv files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
 ##### Output: aGDS files including both the genotype and annotation information. 
 
-Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed
-usage of **FAVORannotator** (SQL version).
+Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed usage of **FAVORannotator** (SQL version).
 
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
