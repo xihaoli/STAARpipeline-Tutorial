@@ -89,7 +89,7 @@ if(arrayid==112)
 
 if(arrayid==113)
 {
-	sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580))
+	sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580,582))
 }
 
 ### gds file
