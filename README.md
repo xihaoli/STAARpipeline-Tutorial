@@ -2,8 +2,7 @@
 This is a tutorial for performing association analysis of whole-genome/whole-exome sequencing (WGS/WES) studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
-R/Bioconductor package **SeqArray** provides functions to convert the genotype data to GDS format. 
-For more details, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a>.
+R/Bioconductor package **SeqArray** provides functions to convert the genotype data (in VCF/PLINK BED/SNPRelate format) to SeqArray GDS format. For more details on usage, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a>.
 
 ### Generate annotated GDS (aGDS) file using FAVORannotator
 #### Prerequisites:
@@ -40,6 +39,9 @@ The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 ##### Output: aGDS files including both the genotype and annotation information. 
 
 Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed usage of **FAVORannotator** (SQL version).
+
+### Generate sparse Genetic Relatedness Matrix (GRM)
+R package **fastSparseGRM** provides functions and a pipeline to efficiently calculate ancestry-adjusted sparse GRM. For more details on usage, please see the R package <a href="https://github.com/rounakdey/FastSparseGRM">**fastSparseGRM**</a>.
 
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
