@@ -86,7 +86,7 @@ for(kk in 1:200)
 		                              Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
 		                              Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name))
 		
-		if(class(results)!="try-error")
+		if(class(results)[1]!="try-error")
 		{
 			results_sliding_window <- rbind(results_sliding_window,results)
 		}
