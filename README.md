@@ -43,7 +43,7 @@ The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed usage of **FAVORannotator** (SQL version).
 
 ### Generate sparse Genetic Relatedness Matrix (GRM)
-R package **fastSparseGRM** provides functions and a pipeline to efficiently calculate ancestry-adjusted sparse GRM. For more details on usage, please see the R package <a href="https://github.com/rounakdey/FastSparseGRM">**fastSparseGRM**</a>.
+R package **FastSparseGRM** provides functions and a pipeline to efficiently calculate ancestry-adjusted sparse GRM. For more details on usage, please see the R package <a href="https://github.com/rounakdey/FastSparseGRM">**FastSparseGRM**</a>.
 
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
