@@ -31,13 +31,13 @@ Note: The physical positions of variants in the GDS file (of each chromosome) sh
 ##### Input: CSV files of the variants list to be annotated, the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>,
 the FAVOR database, and the directory xsv software. For more details, please see the R script.
 ##### Output: CSV files of the annotated variants list. 
-* `Anno_chrXX.csv`: a csv file containing annotated variants list of chromosome XX. <br>
-* `Anno_chrXX_STAARpipeline.csv`: a csv file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
+* `Anno_chrXX.csv`: a CSV file containing annotated variants list of chromosome XX. <br>
+* `Anno_chrXX_STAARpipeline.csv`: a CSV file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
 The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 
 #### Step 3: Generate the annotated GDS (aGDS) file.
 ##### Script: <a href="FAVORannotator_csv/gds2agds.R">**gds2agds.R**</a> 
-##### Input: GDS files and the csv files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
+##### Input: GDS files and the CSV files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
 ##### Output: aGDS files including both the genotype and annotation information. 
 
 Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed usage of **FAVORannotator** (SQL version).
