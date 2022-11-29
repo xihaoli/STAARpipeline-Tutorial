@@ -4,7 +4,7 @@ This is a tutorial for (1) automatically functionally annotating the variants of
 **FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the apps <a href="https://github.com/xihaoli/favorannotator-rap">**favorannotator**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**staarpipeline**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_varset-rap">**staarpipelinesummary_varset**</a> and <a href="https://github.com/xihaoli/staarpipelinesummary_indvar-rap">**staarpipelinesummary_indvar**</a> that run on the UK Biobank Research Analysis Platform for more details.
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
-R/Bioconductor package **SeqArray** provides functions to convert the genotype data (in VCF/PLINK BED/SNPRelate format) to SeqArray GDS format. For more details on usage, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a>.
+R/Bioconductor package **SeqArray** provides functions to convert the genotype data (in VCF/PLINK BED/SNPRelate format) to SeqArray GDS format. For more details on usage, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a> [<a href="https://bioconductor.org/packages/release/bioc/manuals/SeqArray/man/SeqArray.pdf">manual</a>]. A wrapper for the seqVCF2GDS function in the SeqArray package can be found <a href="convertVCF2GDS.R">**here**</a> (**Credit: Michael R. Brown and Jennifer A. Brody**).
 
 ### Generate annotated GDS (aGDS) file using FAVORannotator
 #### Prerequisites:
