@@ -10,7 +10,7 @@ R/Bioconductor package **SeqArray** provides functions to convert the genotype d
 #### Prerequisites:
 **FAVORannotator** (CSV version 1.0.0) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and 
 download the <a href="http://favor.genohub.org">**FAVOR database** CSV files</a> (under the "FAVORannotator" tab) before using **FAVORannotator** (CSV version 1.0.0).
-#### Step 0: Install xsv.
+#### Step 0: Install xsv
 The following steps are for the widely used operating system (Ubuntu) on a virtual machine.
 
 1. Install Rust and Cargo:
