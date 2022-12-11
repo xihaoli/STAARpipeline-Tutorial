@@ -19,14 +19,14 @@ The following steps are for the widely used operating system (Ubuntu) on a virtu
  - ```$ source $HOME/.cargo/env``` 
 3. Install xsv using Cargo:
  - ```$ cargo install xsv```
-#### Step 1: Generate the variants list to be annotated.
+#### Step 1: Generate the variants list to be annotated
 ##### Script: <a href="FAVORannotator_csv/Varinfo_gds.R">**Varinfo_gds.R**</a>
 ##### Input: GDS files of each chromosome and the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>. For more details, please see the R script.
 ##### Output: CSV files of the variants list. For each chromosome, the number of CSV files is listed in <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>.
 
 Note: The physical positions of variants in the GDS file (of each chromosome) should be sorted in ascending order.
 
-#### Step 2: Annotate the variants using the FAVOR database through xsv software.
+#### Step 2: Annotate the variants using the FAVOR database through xsv software
 ##### Script: <a href="FAVORannotator_csv/Annotate.R">**Annotate.R**</a> 
 ##### Input: CSV files of the variants list to be annotated, the FAVOR database information <a href="FAVORannotator_csv/FAVORdatabase_chrsplit.csv">**FAVORdatabase_chrsplit.csv**</a>,
 the FAVOR database, and the directory xsv software. For more details, please see the R script.
@@ -35,7 +35,7 @@ the FAVOR database, and the directory xsv software. For more details, please see
 * `Anno_chrXX_STAARpipeline.csv`: a CSV file containing the variants list with annotations required for STAARpipeline of chromosome XX. 
 The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 
-#### Step 3: Generate the annotated GDS (aGDS) file.
+#### Step 3: Generate the annotated GDS (aGDS) file
 ##### Script: <a href="FAVORannotator_csv/gds2agds.R">**gds2agds.R**</a> 
 ##### Input: GDS files and the CSV files of annotated variants list (`Anno_chrXX.csv` or `Anno_chrXX_STAARpipeline.csv`). For more details, please see the R script.
 ##### Output: aGDS files including both the genotype and annotation information. 
