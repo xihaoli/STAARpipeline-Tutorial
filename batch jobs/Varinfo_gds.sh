@@ -5,7 +5,6 @@
 #SBATCH --array=1-22 --mem=20000
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -x holy7c16109,holy7c04508,holy2a24314,holy2a24315
 #SBATCH --mail-type=NONE
 
 module purge
