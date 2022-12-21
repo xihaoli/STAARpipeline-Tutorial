@@ -61,8 +61,7 @@ for(chr in 1:22)
 	SNVlist <- filter == "PASS" 
 
 	position <- as.numeric(seqGetData(genofile, "position"))
-	position_SNV <- position[SNVlist]
-  
+
 	jobs_num[chr,1] <- chr
 	jobs_num[chr,2] <- min(position[SNVlist])
 	jobs_num[chr,3] <- max(position[SNVlist])
