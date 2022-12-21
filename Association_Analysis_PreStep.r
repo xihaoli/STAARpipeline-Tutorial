@@ -2,7 +2,7 @@
 # Pre-step for running STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 12/21/2022
 ###########################################################
 rm(list=ls())
 gc()
@@ -26,10 +26,14 @@ QC_label <- "annotation/filter"
 output_path <- "/path_to_the_output_file/" 
 ## annotation name. The first eight names are used to define masks in gene-centric analysis, do not change them!! 
 ## The others are the annotation you want to use in the STAAR procedure, and they are flexible to change.
-name <- c("rs_num","GENCODE.Category","GENCODE.Info","GENCODE.EXONIC.Category","MetaSVM","GeneHancer","CAGE","DHS","CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.EpigeneticRepressed","aPC.EpigeneticTranscription",
+name <- c("rs_num","GENCODE.Category","GENCODE.Info","GENCODE.EXONIC.Category",
+          "MetaSVM","GeneHancer","CAGE","DHS","CADD","LINSIGHT","FATHMM.XF",
+          "aPC.EpigeneticActive","aPC.EpigeneticRepressed","aPC.EpigeneticTranscription",
           "aPC.Conservation","aPC.LocalDiversity","aPC.Mappability","aPC.TF","aPC.Protein")
 ## channel name of the annotations. Make sure they are matched with the name, especially for the first eight one!! 
-dir <- c("/rsid","/genecode_comprehensive_category","/genecode_comprehensive_info","/genecode_comprehensive_exonic_category","/metasvm_pred","/genehancer","/cage_tc","/rdhs","/cadd_phred","/linsight","/fathmm_xf",
+dir <- c("/rsid","/genecode_comprehensive_category","/genecode_comprehensive_info",
+         "/genecode_comprehensive_exonic_category","/metasvm_pred",
+         "/genehancer","/cage_tc","/rdhs","/cadd_phred","/linsight","/fathmm_xf",
          "/apc_epigenetics_active","/apc_epigenetics_repressed","/apc_epigenetics_transcription",
          "/apc_conservation","/apc_local_nucleotide_diversity","/apc_mappability",
          "/apc_transcription_factor","/apc_protein_function")
