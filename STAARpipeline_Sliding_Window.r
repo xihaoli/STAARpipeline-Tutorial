@@ -81,7 +81,8 @@ for(kk in 1:200)
 	results <- c()
 	if(start_loc_sub < end_loc_sub)
 	{
-		results <- try(Sliding_Window(chr=chr,start_loc=start_loc_sub,end_loc=end_loc_sub,genofile=genofile,obj_nullmodel=obj_nullmodel,type="multiple",
+		results <- try(Sliding_Window(chr=chr,start_loc=start_loc_sub,end_loc=end_loc_sub,
+		                              genofile=genofile,obj_nullmodel=obj_nullmodel,type="multiple",
 		                              QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
 		                              Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
 		                              Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name))
