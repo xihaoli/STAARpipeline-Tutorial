@@ -69,7 +69,8 @@ ncRNA_results_name <- "TOPMed_F5_LDL_ncRNA"
 ## gene info
 Gene_Centric_Noncoding_Results_Summary(agds_dir=agds_dir,gene_centric_noncoding_jobs_num=gene_centric_noncoding_jobs_num,
                                        input_path=input_path,output_path=output_path,gene_centric_results_name=gene_centric_results_name,
-                                       ncRNA_jobs_num=ncRNA_jobs_num,ncRNA_input_path=ncRNA_input_path,ncRNA_output_path=ncRNA_output_path,ncRNA_results_name=ncRNA_results_name,
+                                       ncRNA_jobs_num=ncRNA_jobs_num,ncRNA_input_path=ncRNA_input_path,
+                                       ncRNA_output_path=ncRNA_output_path,ncRNA_results_name=ncRNA_results_name,
                                        obj_nullmodel=obj_nullmodel,known_loci=known_loci,
                                        method_cond=method_cond,
                                        QC_label=QC_label,geno_missing_imputation=geno_missing_imputation,variant_type=variant_type,
