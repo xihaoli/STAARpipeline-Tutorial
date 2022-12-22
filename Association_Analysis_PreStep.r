@@ -71,9 +71,9 @@ for(chr in 1:22)
 
 # Individual Analysis
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/10e6))
-# Sliding Window
+# Sliding Window Analysis
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/5e6))
-# Dynamic Window (SCANG-STAAR)
+# Dynamic Window Analysis (SCANG-STAAR)
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/1.5e6))
 
 colnames(jobs_num) <- c("chr","start_loc","end_loc","individual_analysis_num","sliding_window_num","scang_num")
