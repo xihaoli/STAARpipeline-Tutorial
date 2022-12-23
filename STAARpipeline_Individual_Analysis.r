@@ -2,7 +2,7 @@
 # Individual Analysis using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 12/23/2022
 ###########################################################
 rm(list=ls())
 gc()
@@ -60,7 +60,7 @@ end_loc <- min(end_loc,jobs_num$end_loc[chr])
 
 a <- Sys.time()
 results_individual_analysis <- c()
-if(start_loc < end_loc)
+if(start_loc <= end_loc)
 {
 	results_individual_analysis <- Individual_Analysis(chr=chr,start_loc=start_loc,end_loc=end_loc,
 	                                                   genofile=genofile,obj_nullmodel=obj_nullmodel,mac_cutoff=20,
