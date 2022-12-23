@@ -62,8 +62,10 @@ a <- Sys.time()
 results_individual_analysis <- c()
 if(start_loc < end_loc)
 {
-	results_individual_analysis <- Individual_Analysis(chr=chr,start_loc=start_loc,end_loc=end_loc,genofile=genofile,obj_nullmodel=obj_nullmodel,
-	                                                   QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation)
+	results_individual_analysis <- Individual_Analysis(chr=chr,start_loc=start_loc,end_loc=end_loc,
+	                                                   genofile=genofile,obj_nullmodel=obj_nullmodel,mac_cutoff=20,
+	                                                   QC_label=QC_label,variant_type=variant_type,
+	                                                   geno_missing_imputation=geno_missing_imputation)
 }
 b <- Sys.time()
 b - a
