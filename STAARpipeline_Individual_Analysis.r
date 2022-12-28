@@ -1,5 +1,5 @@
 ###########################################################
-# Individual Analysis using STAARpipeline
+# Individual analysis using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
 # Current date: 12/23/2022
