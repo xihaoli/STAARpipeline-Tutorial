@@ -2,7 +2,7 @@
 # Gene-centric analysis for coding rare variants using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 12/28/2022
 #####################################################################
 rm(list=ls())
 gc()
@@ -60,41 +60,41 @@ chr <- which.max(arrayid <= cumsum(group.num.allchr))
 group.num <- group.num.allchr[chr]
 
 if (chr == 1){
-   groupid <- arrayid
+  groupid <- arrayid
 }else{
-   groupid <- arrayid - cumsum(group.num.allchr)[chr-1]
+  groupid <- arrayid - cumsum(group.num.allchr)[chr-1]
 }
 
 genes_info_chr <- genes_info[genes_info[,2]==chr,]
 sub_seq_num <- dim(genes_info_chr)[1]
 
 if(groupid < group.num)
-{ 
-	sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):(groupid*gene_num_in_array)
+{
+  sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):(groupid*gene_num_in_array)
 }else
 {
-	sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
+  sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
 }	
 
 ### exclude large genes
 if(arrayid==57)
 {
-	sub_seq_id <- setdiff(sub_seq_id,840)
+  sub_seq_id <- setdiff(sub_seq_id,840)
 }
 
 if(arrayid==112)
 {
-	sub_seq_id <- setdiff(sub_seq_id,c(543,544))
+  sub_seq_id <- setdiff(sub_seq_id,c(543,544))
 }
 
 if(arrayid==113)
 {
-	sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580,582))
+  sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580,582))
 }
 
-### gds file
-gds.path <- agds_dir[chr]
-genofile <- seqOpen(gds.path)
+### aGDS file
+agds.path <- agds_dir[chr]
+genofile <- seqOpen(agds.path)
 
 genes <- genes_info
 
@@ -102,15 +102,15 @@ results_coding <- c()
 
 for(kk in sub_seq_id)
 {
-	print(kk)
-	gene_name <- genes_info_chr[kk,1]
-	results <- Gene_Centric_Coding(chr=chr,gene_name=gene_name,genofile=genofile,obj_nullmodel=obj_nullmodel,
-	                               rare_maf_cutoff=0.01,rv_num_cutoff=2,
-	                               QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
-	                               Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
-	                               Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
-	
-	results_coding <- append(results_coding,results)
+  print(kk)
+  gene_name <- genes_info_chr[kk,1]
+  results <- Gene_Centric_Coding(chr=chr,gene_name=gene_name,genofile=genofile,obj_nullmodel=obj_nullmodel,
+                                 rare_maf_cutoff=0.01,rv_num_cutoff=2,
+                                 QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
+                                 Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
+                                 Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
+  
+  results_coding <- append(results_coding,results)
 }
 
 save(results_coding,file=paste0(output_path,output_file_name,"_",arrayid,".Rdata"))

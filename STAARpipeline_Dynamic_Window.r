@@ -2,7 +2,7 @@
 # Dynamic window analysis using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 12/28/2022
 #####################################################################
 rm(list=ls())
 gc()
@@ -61,14 +61,14 @@ chr <- which.max(arrayid <= cumsum(jobs_num$scang_num))
 group.num <- jobs_num$scang_num[chr]
 
 if (chr == 1){
-   groupid <- arrayid
+  groupid <- arrayid
 }else{
-   groupid <- arrayid - cumsum(jobs_num$scang_num)[chr-1]
+  groupid <- arrayid - cumsum(jobs_num$scang_num)[chr-1]
 }
 
-### gds file
-gds.path <- agds_dir[chr]
-genofile <- seqOpen(gds.path)
+### aGDS file
+agds.path <- agds_dir[chr]
+genofile <- seqOpen(agds.path)
 
 start_loc <- (groupid-1)*1.5e6 + jobs_num$start_loc[chr]
 end_loc <- min(start_loc + 1.5e6 - 1, jobs_num$end_loc[chr])
