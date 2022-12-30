@@ -70,12 +70,12 @@ genes_info_chr <- genes_info[genes_info[,2]==chr,]
 sub_seq_num <- dim(genes_info_chr)[1]
 
 if(groupid < group.num)
-{ 
+{
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):(groupid*gene_num_in_array)
 }else
 {
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
-}	
+}
 
 ### exclude large genes
 jobid_exclude <- c(21,39,44,45,46,53,55,83,88,103,114,127,135,150,154,155,163,164,166,180,189,195,200,233,280,285,295,313,318,319,324,327,363,44,45,54)

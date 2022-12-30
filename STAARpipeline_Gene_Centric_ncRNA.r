@@ -70,12 +70,12 @@ ncRNA_gene_chr <- ncRNA_gene[ncRNA_gene[,1]==chr,]
 sub_seq_num <- dim(ncRNA_gene_chr)[1]
 
 if(groupid < group.num)
-{ 
+{
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):(groupid*gene_num_in_array)
 }else
 {
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
-}	
+}
 
 ### exclude large genes
 if(arrayid==117)

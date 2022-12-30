@@ -74,7 +74,7 @@ if(groupid < group.num)
 }else
 {
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
-}	
+}
 
 ### exclude large genes
 if(arrayid==57)
@@ -99,7 +99,6 @@ genofile <- seqOpen(agds.path)
 genes <- genes_info
 
 results_coding <- c()
-
 for(kk in sub_seq_id)
 {
   print(kk)
