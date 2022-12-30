@@ -45,7 +45,7 @@ Annotation_name <- c("CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.E
 ## output path
 output_path <- "/path_to_the_output_file/"
 ## output file name
-output_file_name <- "TOPMed_F8_LDL_Noncoding"
+output_file_name <- "TOPMed_F5_LDL_Noncoding"
 ## input array id from batch file (Harvard FAS RC cluster)
 arrayid_longmask <- as.numeric(commandArgs(TRUE)[1])
 
