@@ -72,7 +72,7 @@ start_loc <- (groupid-1)*5e6 + jobs_num$start_loc[chr]
 end_loc <- start_loc + (sliding_window_length/2)*20 - 1
 
 results_sliding_window <- c()
-for(kk in 1:(5e6/(sliding_window_length/2)*20))
+for(kk in 1:(5e6/((sliding_window_length/2)*20)))
 {
   print(kk)
   start_loc_sub <- start_loc + (sliding_window_length/2)*20*(kk-1)
