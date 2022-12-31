@@ -30,6 +30,8 @@ QC_label <- "annotation/filter"
 variant_type <- "SNV"
 ## geno_missing_imputation
 geno_missing_imputation <- "mean"
+## sliding_window_length
+sliding_window_length <- 2000
 
 ## Annotation_dir
 Annotation_dir <- "annotation/info/FunctionalAnnotation"
@@ -67,14 +69,14 @@ agds.path <- agds_dir[chr]
 genofile <- seqOpen(agds.path)
 
 start_loc <- (groupid-1)*5e6 + jobs_num$start_loc[chr]
-end_loc <- start_loc + 1000*25 - 1
+end_loc <- start_loc + (sliding_window_length/2)*20 - 1
 
 results_sliding_window <- c()
-for(kk in 1:200)
+for(kk in 1:(5e6/(sliding_window_length/2)*20))
 {
   print(kk)
-  start_loc_sub <- start_loc + 1000*25*(kk-1)
-  end_loc_sub <- end_loc + 1000*25*(kk-1) + 1000
+  start_loc_sub <- start_loc + (sliding_window_length/2)*20*(kk-1)
+  end_loc_sub <- end_loc + (sliding_window_length/2)*20*(kk-1) + (sliding_window_length/2)
   
   end_loc_sub <- min(end_loc_sub,jobs_num$end_loc[chr])
   
@@ -82,7 +84,9 @@ for(kk in 1:200)
   if(start_loc_sub < end_loc_sub)
   {
     results <- try(Sliding_Window(chr=chr,start_loc=start_loc_sub,end_loc=end_loc_sub,
-                                  genofile=genofile,obj_nullmodel=obj_nullmodel,type="multiple",
+                                  sliding_window_length=sliding_window_length,type="multiple",
+                                  genofile=genofile,obj_nullmodel=obj_nullmodel,
+                                  rare_maf_cutoff=0.01,rv_num_cutoff=2,
                                   QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
                                   Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                                   Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name))
