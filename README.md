@@ -93,7 +93,7 @@ Perform gene-centric analysis for noncoding rare variants using the STAARpipelin
 Perform sliding window analysis using the STAARpipeline package.
 #### Input: aGDS files and the STAAR null model. For more details, please see the R script.
 #### Output: Rdata files with the user-defined names.
-The number of output files is the summation of the column "sliding_window_num" for the object in `jobs_num.Rdata`. 
+The number of output files is the summation of the column "sliding_window_num" for the object in `jobs_num.Rdata`.
 
 ### Step 5.0: Obtain SCANG-STAAR null model
 #### Script: <a href="STAARpipeline_STAAR2SCANG.r">**STAARpipeline_STAAR2SCANG.r**</a>
