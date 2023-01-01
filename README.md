@@ -10,8 +10,7 @@ Note: After the GDS file is generated, there is supposed to be a channel in the 
 
 ### Generate annotated GDS (aGDS) file using FAVORannotator
 #### Prerequisites:
-**FAVORannotator** (CSV version 1.0.0) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and 
-download the <a href="http://favor.genohub.org">**FAVOR database** CSV files</a> (under the "FAVORannotator" tab) before using **FAVORannotator** (CSV version 1.0.0).
+**FAVORannotator** (CSV version 1.0.0) depends on the **xsv software** and the **FAVOR database** in CSV format. Please install the <a href="https://github.com/BurntSushi/xsv">**xsv software**</a> and download the <a href="http://favor.genohub.org">**FAVOR essential database** CSV files</a> (under the "FAVORannotator" tab's top panel, 31.2 GB for chr1 CSV) before using **FAVORannotator** (CSV version 1.0.0).
 #### Step 0: Install xsv
 The following steps are for the widely used operating system (Ubuntu) on a virtual machine.
 
