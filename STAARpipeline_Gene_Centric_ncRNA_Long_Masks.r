@@ -50,7 +50,7 @@ output_file_name <- "TOPMed_F5_LDL_ncRNA"
 ###########################################################
 #           Main Function 
 ###########################################################
-## gene number in job
+## analyze large ncRNA masks
 arrayid <- c(117,218,220,220,221,156,219)
 sub_seq_id <- c(53,19,208,274,311,41,103)
 

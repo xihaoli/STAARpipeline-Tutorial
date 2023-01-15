@@ -56,7 +56,7 @@ gene_num_in_array <- 50
 group.num.allchr <- ceiling(table(genes_info[,2])/gene_num_in_array)
 sum(group.num.allchr)
 
-### exclude large genes
+## analyze large coding masks
 arrayid <- c(57,112,112,113,113,113,113,113,113,113)
 sub_seq_id <- c(840,543,544,575,576,577,578,579,580,582)
 

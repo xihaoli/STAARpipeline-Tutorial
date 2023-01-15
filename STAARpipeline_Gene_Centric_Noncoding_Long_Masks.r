@@ -57,14 +57,14 @@ gene_num_in_array <- 50
 group.num.allchr <- ceiling(table(genes_info[,2])/gene_num_in_array)
 sum(group.num.allchr)
 
-### exclude large genes
+## analyze large noncoding masks
 arrayid <- c(21,39,44,45,46,53,55,83,88,103,114,127,135,150,154,155,163,164,166,180,189,195,200,233,280,285,295,313,318,319,324,327,363,44,45,54)
 sub_seq_id <- c(1009,1929,182,214,270,626,741,894,83,51,611,385,771,493,671,702,238,297,388,352,13,303,600,170,554,207,724,755,1048,319,324,44,411,195,236,677)
 
 region_spec <- data.frame(arrayid,sub_seq_id) 
 sub_seq_id <- ((arrayid_longmask-1)*5+1):min(arrayid_longmask*5,length(arrayid))
 
-### aGDS file
+## aGDS file
 genes <- genes_info
 
 results_noncoding <- c()

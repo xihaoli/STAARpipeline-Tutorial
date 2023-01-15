@@ -66,7 +66,7 @@ if (chr == 1){
   groupid <- arrayid - cumsum(jobs_num$scang_num)[chr-1]
 }
 
-### aGDS file
+## aGDS file
 agds.path <- agds_dir[chr]
 genofile <- seqOpen(agds.path)
 

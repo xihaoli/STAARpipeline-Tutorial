@@ -77,7 +77,7 @@ if(groupid < group.num)
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
 }
 
-### exclude large genes
+## exclude large noncoding masks
 jobid_exclude <- c(21,39,44,45,46,53,55,83,88,103,114,127,135,150,154,155,163,164,166,180,189,195,200,233,280,285,295,313,318,319,324,327,363,44,45,54)
 sub_seq_id_exclude <- c(1009,1929,182,214,270,626,741,894,83,51,611,385,771,493,671,702,238,297,388,352,13,303,600,170,554,207,724,755,1048,319,324,44,411,195,236,677)
 
@@ -89,7 +89,7 @@ for(i in 1:length(jobid_exclude))
   }
 }
 
-### aGDS file
+## aGDS file
 agds.path <- agds_dir[chr]
 genofile <- seqOpen(agds.path)
 

@@ -76,7 +76,7 @@ if(groupid < group.num)
   sub_seq_id <- ((groupid - 1)*gene_num_in_array + 1):sub_seq_num
 }
 
-### exclude large genes
+## exclude large coding masks
 if(arrayid==57)
 {
   sub_seq_id <- setdiff(sub_seq_id,840)
@@ -92,7 +92,7 @@ if(arrayid==113)
   sub_seq_id <- setdiff(sub_seq_id,c(575,576,577,578,579,580,582))
 }
 
-### aGDS file
+## aGDS file
 agds.path <- agds_dir[chr]
 genofile <- seqOpen(agds.path)
 

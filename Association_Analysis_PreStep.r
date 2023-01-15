@@ -41,15 +41,15 @@ dir <- c("/rsid","/genecode_comprehensive_category","/genecode_comprehensive_inf
 ###########################################################
 #           Main Function 
 ###########################################################
-#### aGDS directory
+## aGDS directory
 agds_dir <- paste0(dir.geno,agds_file_name_1,seq(1,22),agds_file_name_2) 
 save(agds_dir,file=paste0(output_path,"agds_dir.Rdata",sep=""))
 
-#### Annotation name catalog (alternatively, can skip this part by providing Annotation_name_catalog.csv with the same information)
+## Annotation name catalog (alternatively, can skip this part by providing Annotation_name_catalog.csv with the same information)
 Annotation_name_catalog <- data.frame(name=name,dir=dir)
 save(Annotation_name_catalog,file=paste0(output_path,"Annotation_name_catalog.Rdata",sep=""))
 
-#### Number of jobs for each chromosome
+## Number of jobs for each chromosome
 jobs_num <- matrix(rep(0,66),nrow=22)
 for(chr in 1:22)
 {
@@ -69,11 +69,11 @@ for(chr in 1:22)
 	seqClose(genofile)
 }
 
-# Individual Analysis
+## Individual Analysis
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/10e6))
-# Sliding Window Analysis
+## Sliding Window Analysis
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/5e6))
-# Dynamic Window Analysis (SCANG-STAAR)
+## Dynamic Window Analysis (SCANG-STAAR)
 jobs_num <- cbind(jobs_num,ceiling((jobs_num[,3]-jobs_num[,2])/1.5e6))
 
 colnames(jobs_num) <- c("chr","start_loc","end_loc","individual_analysis_num","sliding_window_num","scang_num")
