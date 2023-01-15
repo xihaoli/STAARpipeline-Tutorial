@@ -52,16 +52,16 @@ samplesize <- length(obj_nullmodel$id_include)
 
 ## input chr number from batch file
 chr <- as.numeric(commandArgs(TRUE)[1])
+print(chr)
 
 ###########################################################
 #           Main Function 
 ###########################################################
-## gds file
-known_loci_chr <- c()
+## aGDS file
+agds.path <- agds_dir[chr]
+genofile <- seqOpen(agds.path)
 
-print(chr)
-gds.path <- agds_dir[chr]
-genofile <- seqOpen(gds.path)
+known_loci_chr <- c()
 
 known_loci <- LD_pruning(chr=chr,genofile=genofile,obj_nullmodel=obj_nullmodel,variants_list=variants_list,maf_cutoff=maf_cutoff,
                          method_cond=method_cond,QC_label=QC_label,
