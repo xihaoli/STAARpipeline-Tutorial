@@ -67,6 +67,6 @@ for(chr in 1:22)
 	seqClose(genofile)
 }
 
-# Output Info of GWASCatalog SNVs
+## Output Info of GWASCatalog SNVs
 save(known_loci_info,file=paste0(output_path,output_file_name,".Rdata"))
 

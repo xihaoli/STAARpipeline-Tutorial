@@ -56,7 +56,7 @@ chr <- as.numeric(commandArgs(TRUE)[1])
 ###########################################################
 #           Main Function 
 ###########################################################
-### gds file
+## gds file
 known_loci_chr <- c()
 
 print(chr)
