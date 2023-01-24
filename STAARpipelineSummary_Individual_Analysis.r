@@ -32,7 +32,7 @@ obj_nullmodel <- get(load("/path_to_the_file/obj_nullmodel.Rdata"))
 input_path <- "/path_to_the_results_file/"
 output_path <- input_path
 ## results name
-individual_results_name <- "TOPMed_F5_LDL_results_individual_analysis"
+individual_results_name <- "TOPMed_F5_LDL_Individual_Analysis"
 
 ## QC_label
 QC_label <- "annotation/filter"
