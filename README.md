@@ -44,7 +44,7 @@ The annotations in this file is a subset of `Anno_chrXX.csv`. <br>
 Note: FAVORannotator also supports the database in SQL format. Please see the <a href="https://github.com/zhouhufeng/FAVORannotator">**FAVORannotator** tutorial</a> for detailed usage of **FAVORannotator** (SQL version).
 
 ### Generate sparse Genetic Relatedness Matrix (GRM)
-R package **FastSparseGRM** provides functions and a pipeline to efficiently calculate ancestry-adjusted sparse GRM. For more details on usage, please see the R package <a href="https://github.com/rounakdey/FastSparseGRM">**FastSparseGRM**</a>.
+R package **FastSparseGRM** provides functions and a pipeline to efficiently calculate genetic principal components (PCs) and the ancestry-adjusted sparse genetic relatedness matrix (GRM). It accounts for population heterogeneity using genetic PCs which are automatically calculated as part of the pipeline. The genetic PCs can be used as fixed effect covariates to account for the population stratification and the sparse GRM can be used to model the random effects to account for the sample relatedness in a mixed effects phenotype-genotype association testing model implemented in STAARpipeline. For more details on usage, please see the R package <a href="https://github.com/rounakdey/FastSparseGRM">**FastSparseGRM**</a>.
 
 ## Association analysis using STAARpipeline
 ### Step 0: Preparation for association analysis of whole-genome/whole-exome sequencing studies
