@@ -108,7 +108,7 @@ Perform dynamic window analysis using the STAARpipeline package.
 The number of output files is the summation of the column "scang_num" for the object in `jobs_num.Rdata`. 
 
 ## Summarization and visualization of association analysis results using STAARpipelineSummary
-### Step 0: Select independent variants from a known variants list to be used in conditional analysis
+### Step 0 (Optional): Select independent variants from a known variants list to be used in conditional analysis
 #### Script: <a href="STAARpipelineSummary_Known_Loci_Pruning.r">**STAARpipelineSummary_Known_Loci_Pruning.r**</a> 
 Perform LD pruning (stepwise selection) to select the subset of independent variants from a known variants list to be used in conditional analysis. 
 #### Input: aGDS files, a list of known variants (CHR, POS, REF and ALT) and STAAR null model.
