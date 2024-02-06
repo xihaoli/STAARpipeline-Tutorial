@@ -2,7 +2,7 @@
 # Gene-centric analysis for coding rare variants in long masks using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 12/28/2022
+# Current date: 02/05/2024
 ##################################################################################
 rm(list=ls())
 gc()
@@ -63,7 +63,6 @@ sub_seq_id <- c(840,543,544,575,576,577,578,579,580,582)
 region_spec <- data.frame(arrayid,sub_seq_id) 
 sub_seq_id <- ((arrayid_longmask-1)*5+1):min(arrayid_longmask*5,length(arrayid))
 
-### aGDS file
 genes <- genes_info
 
 results_coding <- c()
@@ -74,6 +73,7 @@ for(kk in sub_seq_id)
   sub_id <- region_spec$sub_seq_id[kk]
   
   chr <- which.max(arrayid <= cumsum(group.num.allchr))
+  ## aGDS file
   agds.path <- agds_dir[chr]
   genofile <- seqOpen(agds.path)
   

@@ -3,7 +3,7 @@
 # of ncRNA genes using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 12/28/2022
+# Current date: 02/05/2024
 #####################################################################
 rm(list=ls())
 gc()
@@ -69,6 +69,7 @@ for(kk in 1:dim(region_spec)[1])
   chr <- which.max(arrayid <= cumsum(group.num.allchr))
   ncRNA_gene_chr <- ncRNA_gene[ncRNA_gene[,1]==chr,]
   
+  ## aGDS file
   agds.path <- agds_dir[chr]
   genofile <- seqOpen(agds.path)
   

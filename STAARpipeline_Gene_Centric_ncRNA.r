@@ -3,7 +3,7 @@
 # genes using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 12/28/2022
+# Current date: 02/05/2024
 #####################################################################
 rm(list=ls())
 gc()
@@ -111,8 +111,6 @@ if(arrayid==219)
 ## aGDS file
 agds.path <- agds_dir[chr]
 genofile <- seqOpen(agds.path)
-
-genes <- genes_info
 
 results_ncRNA <- c()
 for(kk in sub_seq_id)
