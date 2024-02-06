@@ -72,6 +72,7 @@ for(kk in sub_seq_id)
   sub_id <- region_spec$sub_seq_id[kk]
   
   chr <- which.max(arrayid <= cumsum(group.num.allchr))
+  
   ## aGDS file
   agds.path <- agds_dir[chr]
   genofile <- seqOpen(agds.path)
