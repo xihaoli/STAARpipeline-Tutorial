@@ -2,7 +2,7 @@
 # Gene-centric analysis for coding rare variants using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 02/16/2024
+# Current date: 02/17/2024
 #####################################################################
 rm(list=ls())
 gc()
@@ -52,7 +52,7 @@ arrayid <- as.numeric(commandArgs(TRUE)[1])
 #           Main Function 
 ###########################################################
 ## gene number in job
-gene_num_in_array <- 50 
+gene_num_in_array <- 50
 group.num.allchr <- ceiling(table(genes_info[,2])/gene_num_in_array)
 sum(group.num.allchr)
 

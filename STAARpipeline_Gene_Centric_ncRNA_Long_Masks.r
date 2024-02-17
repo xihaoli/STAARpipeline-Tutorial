@@ -3,7 +3,7 @@
 # of ncRNA genes using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 02/05/2024
+# Current date: 02/17/2024
 #####################################################################
 rm(list=ls())
 gc()
@@ -56,7 +56,7 @@ sub_seq_id <- c(53,19,208,274,311,41,103)
 
 region_spec <- data.frame(arrayid,sub_seq_id)
 
-gene_num_in_array <- 100 
+gene_num_in_array <- 100
 group.num.allchr <- ceiling(table(ncRNA_gene[,1])/gene_num_in_array)
 sum(group.num.allchr)
 
