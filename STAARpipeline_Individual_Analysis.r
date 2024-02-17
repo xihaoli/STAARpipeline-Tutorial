@@ -2,7 +2,7 @@
 # Individual analysis using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 12/28/2022
+# Current date: 02/16/2024
 ###########################################################
 rm(list=ls())
 gc()
@@ -35,7 +35,7 @@ geno_missing_imputation <- "mean"
 output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_Individual_Analysis"
-## input array id from batch file (Harvard FAS RC cluster)
+## input array id from batch file
 arrayid <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################

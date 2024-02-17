@@ -3,7 +3,7 @@
 # genes using STAARpipeline
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 02/05/2024
+# Current date: 02/16/2024
 #####################################################################
 rm(list=ls())
 gc()
@@ -46,7 +46,7 @@ Annotation_name <- c("CADD","LINSIGHT","FATHMM.XF","aPC.EpigeneticActive","aPC.E
 output_path <- "/path_to_the_output_file/"
 ## output file name
 output_file_name <- "TOPMed_F5_LDL_Noncoding"
-## input array id from batch file (Harvard FAS RC cluster)
+## input array id from batch file
 arrayid <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################
