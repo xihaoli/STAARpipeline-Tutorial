@@ -108,7 +108,6 @@ for(kk in sub_seq_id)
                                  QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
                                  Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                                  Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
-  
   results_coding <- append(results_coding,results)
 }
 
