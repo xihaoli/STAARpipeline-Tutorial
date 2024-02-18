@@ -80,13 +80,11 @@ for(kk in sub_seq_id)
   
   genes_info_chr <- genes_info[genes_info[,2]==chr,]
   gene_name <- genes_info_chr[sub_id,1]
-  
   results <- Gene_Centric_Coding(chr=chr,gene_name=gene_name,genofile=genofile,obj_nullmodel=obj_nullmodel,
                                  rare_maf_cutoff=0.01,rv_num_cutoff=2,
                                  QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
                                  Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                                  Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name)
-  
   results_coding <- append(results_coding,results)
   
   seqClose(genofile)

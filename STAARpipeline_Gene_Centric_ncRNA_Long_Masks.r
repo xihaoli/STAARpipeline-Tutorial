@@ -80,7 +80,6 @@ for(kk in 1:dim(region_spec)[1])
                        QC_label=QC_label,variant_type=variant_type,geno_missing_imputation=geno_missing_imputation,
                        Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                        Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name))
-  
   results_ncRNA <- rbind(results_ncRNA,results)
   
   seqClose(genofile)
