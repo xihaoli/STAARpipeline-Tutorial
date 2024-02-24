@@ -20,6 +20,7 @@ DB_path <- "/path_to_the_FAVOR_database/n/holystore01/LABS/xlin/Lab/xihao_zilin/
 ### anno channel (subset)
 anno_colnum <- c(1,8:12,15,16,19,23,25:36)
 
+## input array id from batch file
 chr <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################################
