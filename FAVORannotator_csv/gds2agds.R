@@ -13,7 +13,7 @@ gds_file_name_2 <- ".pass_and_fail.gtonly.minDP0.gds"
 dir_anno <- "/path_to_the_annotation_file/"
 anno_file_name_1 <- "Anno_chr"
 anno_file_name_2 <- "_STAARpipeline.csv"
-## input array id from batch file
+### input array id from batch file
 chr <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################################

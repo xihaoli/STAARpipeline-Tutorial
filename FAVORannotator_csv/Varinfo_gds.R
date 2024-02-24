@@ -13,7 +13,7 @@ gds_file_name_1 <- "freeze.5.chr"
 gds_file_name_2 <- ".pass_and_fail.gtonly.minDP0.gds"
 ### output
 output_path <- "/path_to_the_output_file/"
-## input array id from batch file
+### input array id from batch file
 chr <- as.numeric(commandArgs(TRUE)[1])
 
 ###########################################################################
