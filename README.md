@@ -60,7 +60,7 @@ R package **FastSparseGRM** provides functions and a pipeline to efficiently cal
 ### Step 1: Fit STAAR null model
 #### Script: <a href="STAARpipeline_Null_Model.r">**STAARpipeline_Null_Model.r**</a> or <a href="STAARpipeline_Null_Model_GENESIS.r">**STAARpipeline_Null_Model_GENESIS.r**</a>
 * `STAARpipeline_Null_Model.r` fits the STAAR null model using the STAARpipeline package. <br>
-* `STAARpipeline_Null_Model_GENESIS.r` fits the null model using the GENESIS package and convert it to STAAR null model using the STAARpipeline package.
+* `STAARpipeline_Null_Model_GENESIS.r` fits the null model using the GENESIS package and convert it to the STAAR null model using the STAARpipeline package.
 #### Input: Phenotype data and (sparse) genetic relatedness matrix. For more details, please see the R scripts.
 #### Output: a Rdata file of the STAAR null model.
 
@@ -73,7 +73,7 @@ The number of output files is the summation of the column "individual_analysis_n
 
 ### Step 3.1: Gene-centric coding analysis
 #### Script: <a href="STAARpipeline_Gene_Centric_Coding.r">**STAARpipeline_Gene_Centric_Coding.r**</a> and <a href="STAARpipeline_Gene_Centric_Coding_Long_Masks.r">**STAARpipeline_Gene_Centric_Coding_Long_Masks.r**</a>
-Perform gene-centric analysis for coding rare variants using the STAARpipeline package. The gene-centric coding analysis provides five functional categories to aggregate coding rare variants of each protein-coding gene: (1) putative loss of function (stop gain, stop loss and splice) RVs, (2) missense RVs, (3) disruptive missense RVs, (4) putative loss of function and disruptive missense RVs, and (5) synonymous RVs. <br>
+Perform gene-centric analysis for coding rare variants using the STAARpipeline package. The gene-centric coding analysis provides five functional categories to aggregate coding rare variants of each protein-coding gene: (1) putative loss of function (stop gain, stop loss, and splice) RVs, (2) missense RVs, (3) disruptive missense RVs, (4) putative loss of function and disruptive missense RVs, and (5) synonymous RVs. <br>
 * `STAARpipeline_Gene_Centric_Coding.r` performs gene-centric coding analysis for all protein-coding genes across the genome. There are 379 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_Coding_Long_Masks.r` performs gene-centric coding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_Coding.r`. There are 2 jobs using this script.
 #### Input: aGDS files and the STAAR null model. For more details, please see the R scripts.
@@ -81,7 +81,7 @@ Perform gene-centric analysis for coding rare variants using the STAARpipeline p
 
 ### Step 3.2: Gene-centric noncoding analysis
 #### Script: <a href="STAARpipeline_Gene_Centric_Noncoding.r">**STAARpipeline_Gene_Centric_Noncoding.r**</a>, <a href="STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r">**STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r**</a>, <a href="STAARpipeline_Gene_Centric_ncRNA.r">**STAARpipeline_Gene_Centric_ncRNA.r**</a> and <a href="STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r">**STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r**</a>
-Perform gene-centric analysis for noncoding rare variants using the STAARpipeline package. The gene-centric noncoding analysis provides eight functional categories of regulatory regions to aggregate noncoding rare variants: (1) promoter RVs overlaid with CAGE sites, (2) promoter RVs overlaid with DHS sites, (3) enhancer RVs overlaid with CAGE sites, (4) enhancer RVs overlaid with DHS sites, (5) untranslated region (UTR) RVs, (6) upstream region RVs, (7) downstream region RVs and (8) noncoding RNA (ncRNA) RVs. <br>
+Perform gene-centric analysis for noncoding rare variants using the STAARpipeline package. The gene-centric noncoding analysis provides eight functional categories of regulatory regions to aggregate noncoding rare variants: (1) promoter RVs overlaid with CAGE sites, (2) promoter RVs overlaid with DHS sites, (3) enhancer RVs overlaid with CAGE sites, (4) enhancer RVs overlaid with DHS sites, (5) untranslated region (UTR) RVs, (6) upstream region RVs, (7) downstream region RVs, and (8) noncoding RNA (ncRNA) RVs. <br>
 * `STAARpipeline_Gene_Centric_Noncoding.r` performs gene-centric noncoding analysis for all protein-coding genes across the genome. There are 379 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r` performs gene-centric noncoding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_Noncoding.r`. There are 8 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_ncRNA.r` performs gene-centric noncoding analysis for ncRNA genes across the genome. There are 222 jobs using this script. <br> 
@@ -113,40 +113,40 @@ The number of output files is the summation of the column "scang_num" for the ob
 ### Step 0 (Optional): Select independent variants from a known variants list to be used in conditional analysis
 #### Script: <a href="STAARpipelineSummary_Known_Loci_Pruning.r">**STAARpipelineSummary_Known_Loci_Pruning.r**</a>
 Perform LD pruning (stepwise selection) to select the subset of independent variants from a known variants list to be used in conditional analysis. 
-#### Input: aGDS files, a list of known variants (CHR, POS, REF and ALT) and the STAAR null model.
-<a href="STAARpipelineSummary_Known_Loci_Info.r">**STAARpipelineSummary_Known_Loci_Info.r**</a> extracts the information of CHR, POS, REF and ALT from #rs. For more details, please see the R script.
+#### Input: aGDS files, a list of known variants (4-column "CHR-POS-REF-ALT" format), and the STAAR null model.
+<a href="STAARpipelineSummary_Known_Loci_Info.r">**STAARpipelineSummary_Known_Loci_Info.r**</a> extracts the information of CHR, POS, REF, and ALT from #rs. For more details, please see the R script.
 #### Output: a Rdata file containing a list of independent variants to be used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Loci_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide.
 
 ### Step 1: Summarize individual (single-variant) analysis results
 #### Script: <a href="STAARpipelineSummary_Individual_Analysis.r">**STAARpipelineSummary_Individual_Analysis.r**</a>
 Summarize single-variant analysis results and perform conditional analysis of unconditionally significant variants by adjusting a list of known variants.
-#### Input: aGDS files, individual analysis results generated by STAARpipeline, STAAR null model and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, individual analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant variants.
 Note: <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which can be used for variant-set conditional analysis.
 
 ### Step 2.1: Summarize gene-centric coding analysis results
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Coding.r">**STAARpipelineSummary_Gene_Centric_Coding.r**</a>
 Summarize gene-centric coding analysis results and perform conditional analysis of unconditionally significant coding masks by adjusting a list of known variants.
-#### Input: aGDS files, gene-centric coding analysis results generated by STAARpipeline, STAAR null model and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, gene-centric coding analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant coding masks.
 
 ### Step 2.2: Summarize gene-centric noncoding analysis results
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Noncoding.r">**STAARpipelineSummary_Gene_Centric_Noncoding.r**</a>
 Summarize gene-centric noncoding analysis results and perform conditional analysis of unconditionally significant noncoding masks by adjusting a list of known variants.
-#### Input: aGDS files, gene-centric noncoding analysis results generated by STAARpipeline, STAAR null model and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, gene-centric noncoding analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant noncoding masks.
 
 ### Step 3: Summarize sliding window analysis results
 #### Script: <a href="STAARpipelineSummary_Sliding_Window.r">**STAARpipelineSummary_Sliding_Window.r**</a>
 Summarize sliding window analysis results and perform conditional analysis of unconditionally significant genetic regions by adjusting a list of known variants.
-#### Input: aGDS files, sliding window analysis results generated by STAARpipeline, STAAR null model and a list of known variants. For details, see the R scripts. 
+#### Input: aGDS files, sliding window analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For details, see the R scripts. 
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant sliding windows.
 
 ### Step 4: Summarize dynamic window analysis results
 #### Script: <a href="STAARpipelineSummary_Dynamic_Window.r">**STAARpipelineSummary_Dynamic_Window.r**</a>
 Summarize dynamic window analysis results and perform conditional analysis of unconditionally significant genetic regions by adjusting a list of known variants.
-#### Input: aGDS files, dynamic window analysis results generated by STAARpipeline, STAAR null model and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, dynamic window analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant dynamic windows.
 
 ### Step 5.1: Functionally annotate a list of variants
@@ -159,19 +159,19 @@ The list of variants could be the individual analysis results generated by STAAR
 ### Step 5.2: Functionally annotate rare variants in coding masks
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Coding_Annotation.r">**STAARpipelineSummary_Gene_Centric_Coding_Annotation.r**</a>
 Functionally annotate rare variants of each of the input coding masks.
-#### Input: aGDS files and coding masks (chr, gene name and functional category).
+#### Input: aGDS files and coding masks (chr, gene name, and functional category).
 #### Output: For each input coding mask, the script outputs a Rdata file containing the rare variants and the corresponding functional annotations.
 
 ### Step 5.3: Functionally annotate rare variants in noncoding masks
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Noncoding_Annotation.r">**STAARpipelineSummary_Gene_Centric_Noncoding_Annotation.r**</a>
 Functionally annotate rare variants of each of the input noncoding masks.
-#### Input: aGDS files and noncoding masks (chr, gene name and functional category).
+#### Input: aGDS files and noncoding masks (chr, gene name, and functional category).
 #### Output: For each input noncoding mask, the script outputs a Rdata file containing the rare variants and the corresponding functional annotations.
 
 ### Step 5.4: Functionally annotate rare variants in genetic regions
 #### Script: <a href="STAARpipelineSummary_Genetic_Region_Annotation.r">**STAARpipelineSummary_Genetic_Region_Annotation.r**</a>
 Functionally annotate rare variants of each of the input genetic regions.
-#### Input: aGDS files and noncoding masks (chr, start position and end position).
+#### Input: aGDS files and noncoding masks (chr, start position, and end position).
 #### Output: For each input genetic region, the script outputs a Rdata file containing the rare variants and the corresponding functional annotations.
 
 ### An example of batch job submission scripts for these analyses can be found <a href="/batch jobs">**here**</a>.
