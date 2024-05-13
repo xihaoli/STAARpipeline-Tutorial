@@ -79,7 +79,7 @@ Perform gene-centric analysis for coding rare variants using the STAARpipeline p
 * `STAARpipeline_Gene_Centric_Coding.r` performs gene-centric coding analysis for all protein-coding genes across the genome. There are 379 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_Coding_Long_Masks.r` performs gene-centric coding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_Coding.r`. There are 2 jobs using this script.
 #### Input: aGDS files and the STAAR null model. For more details, please see the R scripts.
-#### Output: 381 Rdata files with the user-defined names. For more details, please see the R scripts.
+#### Output: 381 Rdata files with the user-defined names.
 
 ### Step 3.2: Gene-centric noncoding analysis
 #### Script: <a href="STAARpipeline_Gene_Centric_Noncoding.r">**STAARpipeline_Gene_Centric_Noncoding.r**</a>, <a href="STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r">**STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r**</a>, <a href="STAARpipeline_Gene_Centric_ncRNA.r">**STAARpipeline_Gene_Centric_ncRNA.r**</a> and <a href="STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r">**STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r**</a>
@@ -89,7 +89,7 @@ Perform gene-centric analysis for noncoding rare variants using the STAARpipelin
 * `STAARpipeline_Gene_Centric_ncRNA.r` performs gene-centric noncoding analysis for ncRNA genes across the genome. There are 222 jobs using this script. <br> 
 * `STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r` performs gene-centric noncoding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_ncRNA.r`. There is 1 job using this script. 
 #### Input: aGDS files and the STAAR null model. For more details, please see the R scripts.
-#### Output: 387 Rdata files with the user-defined names for protein-coding genes and 223 Rdata files with the user-defined names for ncRNA genes. For more details, please see the R scripts.
+#### Output: 387 Rdata files with the user-defined names for protein-coding genes and 223 Rdata files with the user-defined names for ncRNA genes.
 
 ### Step 4: Sliding window analysis
 #### Script: <a href="STAARpipeline_Sliding_Window.r">**STAARpipeline_Sliding_Window.r**</a>
