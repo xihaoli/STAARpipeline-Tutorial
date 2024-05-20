@@ -64,9 +64,9 @@ processVariantFiles <- function(files, chr, genofile, variant_type = 'variant') 
     
     # Conditionally filter data based on the type of genetic variant.
     if (tolower(variant_type) == 'snv') {
-      data<- data[nchar(REF) == 1 & nchar(ALT) == 1]
+      data<- data[nchar(data$REF) == 1 & nchar(data$ALT) == 1,]
     } else if (tolower(variant_type) == 'indel') {
-      data<- data[nchar(REF) > 1 | nchar(ALT) > 1]
+      data<- data[nchar(data$REF) > 1 | nchar(data$ALT) > 1,]
     } else if (tolower(variant_type) != 'variant') {
       stop("Error: Please choose variant_type from list: 'SNV', 'Indel', or 'variant'")
     }
