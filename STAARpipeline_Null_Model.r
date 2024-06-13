@@ -1,8 +1,8 @@
 ###########################################################
-# fit STAAR null model
+# fit STAAR null model for single-trait analysis
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 01/06/2023
+# Current date: 06/13/2024
 ###########################################################
 rm(list=ls())
 gc()

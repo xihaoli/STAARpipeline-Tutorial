@@ -1,8 +1,9 @@
 ###########################################################
-# fit STAAR null model using GENESIS package
+# fit STAAR null model for single-trait analysis
+# (using GENESIS package)
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 06/13/2024
 ###########################################################
 rm(list=ls())
 gc()

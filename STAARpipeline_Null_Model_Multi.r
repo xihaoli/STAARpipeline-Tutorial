@@ -1,7 +1,7 @@
 ###########################################################
-# fit STAAR null model
+# fit MultiSTAAR null model for multi-trait analysis
 # Xihao Li, Zilin Li
-# Initiate date: 11/04/2021
+# Initiate date: 06/13/2024
 # Current date: 06/13/2024
 ###########################################################
 rm(list=ls())
