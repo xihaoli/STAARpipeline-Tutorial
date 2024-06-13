@@ -1,7 +1,7 @@
 # STAARpipeline-Tutorial
-This is a tutorial for (1) automatically functionally annotating the variants of whole-genome/whole-exome sequencing (WGS/WES) studies and integrating the functional annotations with the genotype data using **FAVORannotator** and (2) performing association analysis of WGS/WES studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
+This is a tutorial for (1) automatically functionally annotating the variants of whole-genome/whole-exome sequencing (WGS/WES) studies and integrating the functional annotations with the genotype data using **FAVORannotator** and (2) performing single-/multi-trait association analysis of WGS/WES studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 
-**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the apps
+**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the following apps
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**favorannotator (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**favorannotator (DNAnexus)**</a>
 
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**staarpipeline (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**staarpipeline (DNAnexus)**</a>
@@ -66,17 +66,19 @@ R package **FastSparseGRM** provides functions and a pipeline to efficiently cal
 * `Annotation_name_catalog.Rdata`: a data frame containing the annotation name and the corresponding channel name in the aGDS file. Alternatively, one can skip this part in the R script by providing `Annotation_name_catalog.csv` with the same information. An example of `Annotation_name_catalog.csv` can be found <a href="https://github.com/xihaoli/STAARpipeline-Tutorial/blob/main/FAVORannotator_csv/Annotation_name_catalog.csv">here</a>. <br>
 * `jobs_num.Rdata`: a data frame containing the number of jobs for association analysis, including individual analysis, sliding window analysis and dynamic window analysis (SCANG-STAAR).
 
-### Step 1: Fit STAAR null model
-#### Script: <a href="STAARpipeline_Null_Model.r">**STAARpipeline_Null_Model.r**</a> or <a href="STAARpipeline_Null_Model_GENESIS.r">**STAARpipeline_Null_Model_GENESIS.r**</a>
+### Step 1: Fit STAAR or MultiSTAAR null model
+#### Script: <a href="STAARpipeline_Null_Model.r">**STAARpipeline_Null_Model.r**</a> or <a href="STAARpipeline_Null_Model_GENESIS.r">**STAARpipeline_Null_Model_GENESIS.r**</a> or <a href="STAARpipeline_Null_Model_Multi.r">**STAARpipeline_Null_Model.r**</a>
 * `STAARpipeline_Null_Model.r` fits the STAAR null model using the STAARpipeline package. <br>
-* `STAARpipeline_Null_Model_GENESIS.r` fits the null model using the GENESIS package and convert it to the STAAR null model using the STAARpipeline package.
+* `STAARpipeline_Null_Model_GENESIS.r` fits the null model using the GENESIS package and convert it to the STAAR null model using the STAARpipeline package. <br>
+* `STAARpipeline_Null_Model_Multi.r` fits the MultiSTAAR null model using the STAARpipeline package. <br>
 #### Input: Phenotype data and (sparse) genetic relatedness matrix. For more details, please see the R scripts.
-#### Output: a Rdata file of the STAAR null model.
+#### Output: a Rdata file of the STAAR or MultiSTAAR null model.
+Note: Once the STAAR or MultiSTAAR null model is fit, all the remaining steps of STAARpipeline and STAARpipelineSummary share the same scripts (the information of single-trait or multi-trait analysis being considered is automatically retrieved from the null model object).
 
 ### Step 2: Individual (single-variant) analysis
 #### Script: <a href="STAARpipeline_Individual_Analysis.r">**STAARpipeline_Individual_Analysis.r**</a>
 Perform single-variant analysis for common and low-frequency variants across the genome using the STAARpipeline package. 
-#### Input: aGDS files and the STAAR null model. For more details, please see the R script.
+#### Input: aGDS files and the STAAR or MultiSTAAR null model. For more details, please see the R script.
 #### Output: Rdata files with the user-defined names.
 The number of output files is the summation of the column "individual_analysis_num" for the object in `jobs_num.Rdata`.
 
@@ -85,7 +87,7 @@ The number of output files is the summation of the column "individual_analysis_n
 Perform gene-centric analysis for coding rare variants using the STAARpipeline package. The gene-centric coding analysis provides five functional categories to aggregate coding rare variants of each protein-coding gene: (1) putative loss of function (stop gain, stop loss, and splice) RVs, (2) missense RVs, (3) disruptive missense RVs, (4) putative loss of function and disruptive missense RVs, and (5) synonymous RVs. <br>
 * `STAARpipeline_Gene_Centric_Coding.r` performs gene-centric coding analysis for all protein-coding genes across the genome. There are 379 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_Coding_Long_Masks.r` performs gene-centric coding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_Coding.r`. There are 2 jobs using this script.
-#### Input: aGDS files and the STAAR null model. For more details, please see the R scripts.
+#### Input: aGDS files and the STAAR or MultiSTAAR null model. For more details, please see the R scripts.
 #### Output: 381 Rdata files with the user-defined names.
 
 ### Step 3.2: Gene-centric noncoding analysis
@@ -95,13 +97,13 @@ Perform gene-centric analysis for noncoding rare variants using the STAARpipelin
 * `STAARpipeline_Gene_Centric_Noncoding_Long_Masks.r` performs gene-centric noncoding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_Noncoding.r`. There are 8 jobs using this script. <br>
 * `STAARpipeline_Gene_Centric_ncRNA.r` performs gene-centric noncoding analysis for ncRNA genes across the genome. There are 222 jobs using this script. <br> 
 * `STAARpipeline_Gene_Centric_ncRNA_Long_Masks.r` performs gene-centric noncoding analysis for some specific long masks, and might require larger memory compared to `STAARpipeline_Gene_Centric_ncRNA.r`. There is 1 job using this script. 
-#### Input: aGDS files and the STAAR null model. For more details, please see the R scripts.
+#### Input: aGDS files and the STAAR or MultiSTAAR null model. For more details, please see the R scripts.
 #### Output: 387 Rdata files with the user-defined names for protein-coding genes and 223 Rdata files with the user-defined names for ncRNA genes.
 
 ### Step 4: Sliding window analysis
 #### Script: <a href="STAARpipeline_Sliding_Window.r">**STAARpipeline_Sliding_Window.r**</a>
 Perform sliding window analysis using the STAARpipeline package.
-#### Input: aGDS files and the STAAR null model. For more details, please see the R script.
+#### Input: aGDS files and the STAAR or MultiSTAAR null model. For more details, please see the R script.
 #### Output: Rdata files with the user-defined names.
 The number of output files is the summation of the column "sliding_window_num" for the object in `jobs_num.Rdata`.
 
@@ -122,7 +124,7 @@ The number of output files is the summation of the column "scang_num" for the ob
 ### Step 0 (Optional): Select independent variants from a known variants list to be used in conditional analysis
 #### Script: <a href="STAARpipelineSummary_Known_Loci_Pruning.r">**STAARpipelineSummary_Known_Loci_Pruning.r**</a>
 Perform LD pruning (stepwise selection) to select the subset of independent variants from a known variants list to be used in conditional analysis. 
-#### Input: aGDS files, a list of known variants (4-column "CHR-POS-REF-ALT" format), and the STAAR null model.
+#### Input: aGDS files, a list of known variants (4-column "CHR-POS-REF-ALT" format), and the STAAR or MultiSTAAR null model.
 <a href="STAARpipelineSummary_Known_Loci_Info.r">**STAARpipelineSummary_Known_Loci_Info.r**</a> extracts the information of CHR, POS, REF, and ALT from #rs. For more details, please see the R script.
 #### Output: a Rdata file containing a list of independent variants to be used in conditional analysis.
 <a href="STAARpipelineSummary_Known_Loci_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Pruning_Combination.r**</a> combines chromosome-wide results into genome-wide.
@@ -130,26 +132,26 @@ Perform LD pruning (stepwise selection) to select the subset of independent vari
 ### Step 1: Summarize individual (single-variant) analysis results
 #### Script: <a href="STAARpipelineSummary_Individual_Analysis.r">**STAARpipelineSummary_Individual_Analysis.r**</a>
 Summarize single-variant analysis results and perform conditional analysis of unconditionally significant variants by adjusting a list of known variants.
-#### Input: aGDS files, individual analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, individual analysis results generated by STAARpipeline, the STAAR or MultiSTAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant variants.
 Note: <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning.r**</a> and <a href="STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r">**STAARpipelineSummary_Known_Loci_Individual_Analysis_Pruning_Combination.r**</a> show an example to select independent variants from both the known variants in literature and significant single variants detected in individual analysis, which can be used for variant-set conditional analysis.
 
 ### Step 2.1: Summarize gene-centric coding analysis results
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Coding.r">**STAARpipelineSummary_Gene_Centric_Coding.r**</a>
 Summarize gene-centric coding analysis results and perform conditional analysis of unconditionally significant coding masks by adjusting a list of known variants.
-#### Input: aGDS files, gene-centric coding analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, gene-centric coding analysis results generated by STAARpipeline, the STAAR or MultiSTAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant coding masks.
 
 ### Step 2.2: Summarize gene-centric noncoding analysis results
 #### Script: <a href="STAARpipelineSummary_Gene_Centric_Noncoding.r">**STAARpipelineSummary_Gene_Centric_Noncoding.r**</a>
 Summarize gene-centric noncoding analysis results and perform conditional analysis of unconditionally significant noncoding masks by adjusting a list of known variants.
-#### Input: aGDS files, gene-centric noncoding analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For more details, please see the R script.
+#### Input: aGDS files, gene-centric noncoding analysis results generated by STAARpipeline, the STAAR or MultiSTAAR null model, and a list of known variants. For more details, please see the R script.
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant noncoding masks.
 
 ### Step 3: Summarize sliding window analysis results
 #### Script: <a href="STAARpipelineSummary_Sliding_Window.r">**STAARpipelineSummary_Sliding_Window.r**</a>
 Summarize sliding window analysis results and perform conditional analysis of unconditionally significant genetic regions by adjusting a list of known variants.
-#### Input: aGDS files, sliding window analysis results generated by STAARpipeline, the STAAR null model, and a list of known variants. For details, see the R scripts. 
+#### Input: aGDS files, sliding window analysis results generated by STAARpipeline, the STAAR or MultiSTAAR null model, and a list of known variants. For details, see the R scripts. 
 #### Output: The summary includes the Manhattan plot, Q-Q plot, and conditional p-values of unconditionally significant sliding windows.
 
 ### Step 4: Summarize dynamic window analysis results
