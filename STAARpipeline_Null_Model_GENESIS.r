@@ -29,8 +29,8 @@ output_name <- "obj_nullmodel_GENESIS.Rdata"
 ## fit null model using GENESIS 
 data_GENESIS <- as(phenotype,"AnnotatedDataFrame") # Make AnnotatedDataFrame (specifically required by GENESIS)
 obj_nullmodel_GENESIS <- fitNullModel(data_GENESIS,outcome="LDLadj.norm",
-                                      covars=c("age","age2","sex","PC1","PC2","PC3","PC4","PC5","PC6","PC7","PC8","PC9","PC10","study_race"),
-                                      cov.mat=sgrm,group.var="study_race",AIREML.tol=1e-4,verbose=TRUE)
+                                      covars=c("age","age2","sex","PC1","PC2","PC3","PC4","PC5","PC6","PC7","PC8","PC9","PC10","study_ethnicity"),
+                                      cov.mat=sgrm,group.var="study_ethnicity",AIREML.tol=1e-4,verbose=TRUE)
 
 ## convert GENESIS null model to STAAR null model
 obj_nullmodel <- genesis2staar_nullmodel(obj_nullmodel_GENESIS)

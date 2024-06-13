@@ -1,7 +1,7 @@
 # STAARpipeline-Tutorial
 This is a tutorial for (1) automatically functionally annotating the variants of whole-genome/whole-exome sequencing (WGS/WES) studies and integrating the functional annotations with the genotype data using **FAVORannotator** and (2) performing single-/multi-trait association analysis of WGS/WES studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 
-**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the apps
+**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the following apps
 
 **favorannotator** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**RAP-DNAnexus**</a>) <br>
 **staarpipeline** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**RAP-DNAnexus**</a>) <br>
@@ -65,13 +65,13 @@ R package **FastSparseGRM** provides functions and a pipeline to efficiently cal
 * `jobs_num.Rdata`: a data frame containing the number of jobs for association analysis, including individual analysis, sliding window analysis and dynamic window analysis (SCANG-STAAR).
 
 ### Step 1: Fit STAAR or MultiSTAAR null model
-#### Script: <a href="STAARpipeline_Null_Model.r">**STAARpipeline_Null_Model.r**</a> or <a href="STAARpipeline_Null_Model_GENESIS.r">**STAARpipeline_Null_Model_GENESIS.r**</a> or <a href="STAARpipeline_Null_Model_Multi.r">**STAARpipeline_Null_Model.r**</a>
+#### Script: <a href="STAARpipeline_Null_Model.r">**STAARpipeline_Null_Model.r**</a> or <a href="STAARpipeline_Null_Model_GENESIS.r">**STAARpipeline_Null_Model_GENESIS.r**</a> or <a href="STAARpipeline_Null_Model_Multi.r">**STAARpipeline_Null_Model_Multi.r**</a>
 * `STAARpipeline_Null_Model.r` fits the STAAR null model using the STAARpipeline package. <br>
 * `STAARpipeline_Null_Model_GENESIS.r` fits the null model using the GENESIS package and convert it to the STAAR null model using the STAARpipeline package. <br>
 * `STAARpipeline_Null_Model_Multi.r` fits the MultiSTAAR null model using the STAARpipeline package. <br>
 #### Input: Phenotype data and (sparse) genetic relatedness matrix. For more details, please see the R scripts.
 #### Output: a Rdata file of the STAAR or MultiSTAAR null model.
-Note: Once the STAAR or MultiSTAAR null model is fit, all the remaining steps of STAARpipeline and STAARpipelineSummary share the same scripts (the information of single-trait or multi-trait analysis being considered is automatically retrieved from the null model object).
+Note: Once the <a href="https://github.com/xihaoli/STAAR">STAAR</a> or <a href="https://github.com/xihaoli/MultiSTAAR">MultiSTAAR</a> null model is fit, all the remaining steps of STAARpipeline and STAARpipelineSummary share the same scripts (the information of single-trait or multi-trait analysis being considered is automatically retrieved from the null model object).
 
 ### Step 2: Individual (single-variant) analysis
 #### Script: <a href="STAARpipeline_Individual_Analysis.r">**STAARpipeline_Individual_Analysis.r**</a>
