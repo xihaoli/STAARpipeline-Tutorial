@@ -3,9 +3,13 @@ This is a tutorial for (1) automatically functionally annotating the variants of
 
 **FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the apps
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**favorannotator (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**favorannotator (DNAnexus)**</a>
+
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**staarpipeline (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**staarpipeline (DNAnexus)**</a>
+
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-varset-0-9-6">**staarpipelinesummary_varset (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_varset-rap">**staarpipelinesummary_varset (DNAnexus)**</a>
+
 <a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-indvar-0-9-6">**staarpipelinesummary_indvar (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_indvar-rap">**staarpipelinesummary_indvar (DNAnexus)**</a>
+
 that run on the NIH/NHLBI BioData Catalyst (BDC) ecosystem and the UK Biobank Research Analysis Platform (RAP) for more details (<a href="tinyurl.com/staarpipelineapps">**user manual and tutorial**</a>).
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
