@@ -1,16 +1,14 @@
 # STAARpipeline-Tutorial
 This is a tutorial for (1) automatically functionally annotating the variants of whole-genome/whole-exome sequencing (WGS/WES) studies and integrating the functional annotations with the genotype data using **FAVORannotator** and (2) performing single-/multi-trait association analysis of WGS/WES studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 
-**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the following apps
-<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**favorannotator (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**favorannotator (DNAnexus)**</a>
+**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the apps
 
-<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**staarpipeline (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**staarpipeline (DNAnexus)**</a>
+**favorannotator** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**RAP-DNAnexus**</a>) <br>
+**staarpipeline** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**RAP-DNAnexus**</a>) <br>
+**staarpipelinesummary_varset** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-varset-0-9-6">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_varset-rap">**RAP-DNAnexus**</a>) <br>
+**staarpipelinesummary_indvar** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-indvar-0-9-6">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_indvar-rap">**RAP-DNAnexus**</a>)
 
-<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-varset-0-9-6">**staarpipelinesummary_varset (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_varset-rap">**staarpipelinesummary_varset (DNAnexus)**</a>
-
-<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipelinesummary-indvar-0-9-6">**staarpipelinesummary_indvar (Seven Bridges)**</a>, <a href="https://github.com/xihaoli/staarpipelinesummary_indvar-rap">**staarpipelinesummary_indvar (DNAnexus)**</a>
-
-that run on the NIH/NHLBI BioData Catalyst (BDC) ecosystem and the UK Biobank Research Analysis Platform (RAP) for more details (<a href="tinyurl.com/staarpipelineapps">**user manual and tutorial**</a>).
+that run on the <a href="https://biodatacatalyst.nhlbi.nih.gov">**NIH/NHLBI BioData Catalyst (BDC) ecosystem**</a> and the <a href="https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform">**UK Biobank Research Analysis Platform (RAP)**</a> for more details (<a href="tinyurl.com/staarpipelineapps">**user manual and tutorial**</a>).
 ## Pre-step of association analysis using STAARpipeline 
 ### Generate Genomic Data Structure (GDS) file
 R/Bioconductor package **SeqArray** provides functions to convert the genotype data (in VCF/BCF/PLINK BED/SNPRelate format) to SeqArray GDS format. For more details on usage, please see the R/Bioconductor package <a href="https://bioconductor.org/packages/release/bioc/html/SeqArray.html">**SeqArray**</a> [<a href="https://bioconductor.org/packages/release/bioc/manuals/SeqArray/man/SeqArray.pdf">manual</a>]. A wrapper for the `seqVCF2GDS`/`seqBCF2GDS` function in the SeqArray package can be found <a href="convertVCF2GDS.R">**here**</a> (**Credit: Michael R. Brown and Jennifer A. Brody**).
