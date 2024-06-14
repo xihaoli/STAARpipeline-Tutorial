@@ -1,7 +1,7 @@
 # STAARpipeline-Tutorial
 This is a tutorial for (1) automatically functionally annotating the variants of whole-genome/whole-exome sequencing (WGS/WES) studies and integrating the functional annotations with the genotype data using **FAVORannotator** and (2) performing single-/multi-trait association analysis of WGS/WES studies, summarizing and visualization results using **STAARpipeline** and **STAARpipelineSummary**. The software prerequisites, dependencies and installation can be found in <a href="https://github.com/xihaoli/STAARpipeline">**STAARpipeline**</a> and <a href="https://github.com/xihaoli/STAARpipelineSummary">**STAARpipelineSummary**</a> packages.
 
-**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps. Please see the following apps
+**FAVORannotator**, **STAARpipeline** and **STAARpipelineSummary** are implemented as a collection of apps for cloud-based platforms. Please see the following apps
 
 **favorannotator** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/favorannotator-1-0-0">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/favorannotator-rap">**RAP-DNAnexus**</a>) <br>
 **staarpipeline** (<a href="https://platform.sb.biodatacatalyst.nhlbi.nih.gov/public/apps/admin/sbg-public-data/staarpipeline-0-9-6">**BDC-Seven Bridges**</a>, <a href="https://github.com/xihaoli/staarpipeline-rap">**RAP-DNAnexus**</a>) <br>
