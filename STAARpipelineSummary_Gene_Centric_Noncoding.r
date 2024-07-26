@@ -3,7 +3,7 @@
 # noncoding analysis results using STAARpipelineSummary
 # Xihao Li, Zilin Li
 # Initiate date: 11/04/2021
-# Current date: 03/10/2022
+# Current date: 07/26/2024
 ##########################################################
 rm(list=ls())
 gc()
@@ -76,5 +76,5 @@ Gene_Centric_Noncoding_Results_Summary(agds_dir=agds_dir,gene_centric_noncoding_
                                        QC_label=QC_label,geno_missing_imputation=geno_missing_imputation,variant_type=variant_type,
                                        Annotation_dir=Annotation_dir,Annotation_name_catalog=Annotation_name_catalog,
                                        Use_annotation_weights=Use_annotation_weights,Annotation_name=Annotation_name,
-                                       alpha=alpha,manhattan_plot=TRUE,QQ_plot=TRUE)
+                                       alpha=alpha,ncRNA_pos=ncRNA_pos,manhattan_plot=TRUE,QQ_plot=TRUE)
 
